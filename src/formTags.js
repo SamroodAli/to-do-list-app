@@ -5,17 +5,21 @@ export const input = (...args) => ele("input", ...args);
 export const textArea = (...args) => ele("textArea", ...args);
 export const label = (...args) => ele("label", ...args);
 
-const customInput =
-  (type) => (placeholder, id, className, styles, attributes) =>
-    input(
-      undefined,
-      className,
-      Object.assign({ display: "block" }, styles),
-      Object.assign({ type, placeholder, id, required: "" }, attributes)
-    );
+const customInput = (type) => (placeholder, className, attributes, styles) =>
+  input(
+    undefined,
+    className,
+    Object.assign({ type, placeholder, required: "" }, attributes),
+    styles
+  );
 
 export const labelFor = (innerHTML, htmlFor, className, styles, attributes) =>
-  label(innerHTML, className, styles, Object.assign({ htmlFor, attributes }));
+  label(
+    innerHTML,
+    className,
+    Object.assign({ for: htmlFor }, attributes),
+    styles
+  );
 
 export const textInput = customInput("email");
 export const checkBoxInput = customInput("checkbox");

@@ -1,4 +1,4 @@
-function element(element, innerHtml, className, styles, attributes) {
+function element(element, innerHtml, className, attributes, styles) {
   const newElement = document.createElement(element);
 
   if (Array.isArray(innerHtml)) {
@@ -13,15 +13,16 @@ function element(element, innerHtml, className, styles, attributes) {
     newElement.className = className;
   }
 
-  if (styles) {
-    Object.assign(newElement.style, styles);
-  }
-
   if (attributes) {
     Object.entries(attributes).forEach(([key, value]) =>
       newElement.setAttribute(key, value)
     );
   }
+
+  if (styles) {
+    Object.assign(newElement.style, styles);
+  }
+
   return newElement;
 }
 
