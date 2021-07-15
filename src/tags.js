@@ -28,8 +28,7 @@ export const form = (...args) => ele("form", ...args);
 export const input = (...args) => ele("input", ...args);
 
 const customInput = (type) => (innerHtml, className, styles, attributes) =>
-  ele(
-    "input",
+  input(
     innerHtml,
     className,
     styles,
@@ -37,3 +36,4 @@ const customInput = (type) => (innerHtml, className, styles, attributes) =>
   );
 
 export const textInput = customInput("email");
+export const checkBoxInput = customInput("checkbox");
