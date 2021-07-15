@@ -38,5 +38,6 @@ function refresh() {
 }
 
 form.addEventListener("submit", (event) => submit(form, event));
+categoryForm.addEventListener("submit", (event) => newCategory(form, event));
 
 content.append(form, categoryForm);
