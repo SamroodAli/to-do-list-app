@@ -16,7 +16,7 @@ const optionsCreator = (categories) => {
   );
 };
 
-const newTodoForm = (categories) => {
+const newTodoForm = (categories = []) => {
   return form([
     textInput("Enter title", "", { name: "title" }),
     textArea("", "", {
