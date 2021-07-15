@@ -1,7 +1,5 @@
-# Ratchets Restuarant project.
-
-A resturant page built using only javascript and css. All elements in the page are created using javascript. Inspired by React, I have created wrappers for DOM APIs making it easy to create nested markup
-
+# TO DO List project
+  A todo list app built using Web APIs and webpack to bundle modules.
 ## Built With
 - CSS Bootstrap
 - Javascript
@@ -10,7 +8,7 @@ A resturant page built using only javascript and css. All elements in the page a
 ## Live Demo
 
 Click on the link below for accessing the deployed website.
-### [Ratchets Restuarant Live Link](https://samroodali.github.io/restuarant-page/)</p>
+### [To Do List App](https://github.com/SamroodAli/to-do-list-app.git)</p>
 
 
 ## Getting Started
@@ -27,7 +25,7 @@ All code below are for a terminal.
 
 1. Clone repository: 
 ```sh
-  $ git clone https://github.com/SamroodAli/restuarant-page.git
+  $ git clone https://github.com/SamroodAli/to-do-list-app.git
 ```
 2. Change directory inside project
 ```sh
