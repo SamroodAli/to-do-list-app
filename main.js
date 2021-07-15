@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _newTodoForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./newTodoForm */ \"./src/newTodoForm.js\");\n\nconst content = document.getElementById(\"content\");\n\ncontent.appendChild((0,_newTodoForm__WEBPACK_IMPORTED_MODULE_0__.default)());\n\n\n//# sourceURL=webpack://restuarant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _newTodoForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./newTodoForm */ \"./src/newTodoForm.js\");\n\nconst content = document.getElementById(\"content\");\n\nconst form = (0,_newTodoForm__WEBPACK_IMPORTED_MODULE_0__.default)();\n\nfunction submit(form, event) {\n  event.preventDefault();\n  const toDoInfo = Array.from(form.elements).map((ele) => ele.value);\n  console.log(toDoInfo);\n}\n\nform.addEventListener(\"submit\", (event) => submit(form, event));\n\ncontent.appendChild(form);\n\n\n//# sourceURL=webpack://restuarant-page/./src/index.js?");
 
 /***/ }),
 
