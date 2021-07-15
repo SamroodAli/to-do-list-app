@@ -29,7 +29,7 @@ All code below are for a terminal.
 ```
 2. Change directory inside project
 ```sh
-cd restuarant-page
+cd to-do-list-app
 ```
 3. In your terminal, run 
 ```sh
