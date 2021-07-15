@@ -7,7 +7,7 @@ const todoCard = (todo) =>
       p(todo.description),
       p(todo.date),
       p(todo.priority),
-      // p(todo.category.name),
+      p(todo.category.name),
     ],
     "card w-50 mx-auto p-5"
   );

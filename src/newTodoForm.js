@@ -11,8 +11,8 @@ import {
 } from "./formTags.js";
 
 const optionsCreator = (categories) => {
-  return categories.map((category) =>
-    option(category.name, "", { value: category.name })
+  return categories.map((category, idx) =>
+    option(category.name, "", { value: idx })
   );
 };
 

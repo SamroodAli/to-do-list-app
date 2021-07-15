@@ -1,10 +1,17 @@
 import newTodoForm from "./newTodoForm.js";
 import ToDo from "./todo.js";
 import todoCard from "./todoCard";
+import Category from "./category.js";
 
 const content = document.getElementById("content");
 
-const form = newTodoForm();
+const project1 = new Category("Project 1");
+const project2 = new Category("Project 2");
+const project3 = new Category("Project 3");
+
+const categories = [project1, project2, project3];
+
+const form = newTodoForm(categories);
 const todos = [];
 
 function submit(form, event) {
@@ -12,8 +19,13 @@ function submit(form, event) {
   const [title, description, date, priority, option] = Array.from(
     form.elements
   ).map((ele) => ele.value);
-  console.log(option);
-  const newTodo = new ToDo(title, description, date, priority);
+  const newTodo = new ToDo(
+    title,
+    description,
+    date,
+    priority,
+    categories[option]
+  );
   todos.push(newTodo);
   refresh();
 }
