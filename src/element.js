@@ -5,7 +5,7 @@ function element(element, innerHtml, className, styles, attributes) {
     newElement.append(...innerHtml);
   } else if (typeof innerHtml === "object") {
     newElement.appendChild(innerHtml);
-  } else if (typeof innerHtml === "string") {
+  } else {
     newElement.innerText = innerHtml.toString();
   }
 

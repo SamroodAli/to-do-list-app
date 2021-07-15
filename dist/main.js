@@ -10,13 +10,23 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/category.js":
+/*!*************************!*\
+  !*** ./src/category.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Category {\n  constructor(name, todos = []) {\n    this.name = name;\n    this.todos = todos;\n  }\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Category);\n\n\n//# sourceURL=webpack://restuarant-page/./src/category.js?");
+
+/***/ }),
+
 /***/ "./src/element.js":
 /*!************************!*\
   !*** ./src/element.js ***!
   \************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction element(element, innerHtml, className, styles, attributes) {\n  const newElement = document.createElement(element);\n\n  if (Array.isArray(innerHtml)) {\n    newElement.append(...innerHtml);\n  } else if (typeof innerHtml === \"object\") {\n    newElement.appendChild(innerHtml);\n  } else if (typeof innerHtml === \"string\") {\n    newElement.innerText = innerHtml.toString();\n  }\n\n  if (className) {\n    newElement.className = className;\n  }\n\n  if (styles) {\n    Object.assign(newElement.style, styles);\n  }\n\n  if (attributes) {\n    Object.entries(attributes).forEach(([key, value]) =>\n      newElement.setAttribute(key, value)\n    );\n  }\n  return newElement;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (element);\n\n\n//# sourceURL=webpack://restuarant-page/./src/element.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nfunction element(element, innerHtml, className, styles, attributes) {\n  const newElement = document.createElement(element);\n\n  if (Array.isArray(innerHtml)) {\n    newElement.append(...innerHtml);\n  } else if (typeof innerHtml === \"object\") {\n    newElement.appendChild(innerHtml);\n  } else {\n    newElement.innerText = innerHtml.toString();\n  }\n\n  if (className) {\n    newElement.className = className;\n  }\n\n  if (styles) {\n    Object.assign(newElement.style, styles);\n  }\n\n  if (attributes) {\n    Object.entries(attributes).forEach(([key, value]) =>\n      newElement.setAttribute(key, value)\n    );\n  }\n  return newElement;\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (element);\n\n\n//# sourceURL=webpack://restuarant-page/./src/element.js?");
 
 /***/ }),
 
@@ -26,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo.js */ \"./src/todo.js\");\n/* harmony import */ var _tags__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tags */ \"./src/tags.js\");\n\n\n\nconst content = document.getElementById(\"content\");\n\n\n//# sourceURL=webpack://restuarant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./todo.js */ \"./src/todo.js\");\n/* harmony import */ var _tags__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./tags */ \"./src/tags.js\");\n/* harmony import */ var _category_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./category.js */ \"./src/category.js\");\n\n\n\n\nconst project = new _category_js__WEBPACK_IMPORTED_MODULE_2__.default(\"Project Ratchets\");\n\nconst todo = new _todo_js__WEBPACK_IMPORTED_MODULE_0__.default(\"title\", \"description\", \"13/3/2020\", 10, project);\n\nconst content = document.getElementById(\"content\");\ncontent.appendChild(\n  (0,_tags__WEBPACK_IMPORTED_MODULE_1__.div)(\n    [\n      (0,_tags__WEBPACK_IMPORTED_MODULE_1__.p)(todo.title),\n      (0,_tags__WEBPACK_IMPORTED_MODULE_1__.p)(todo.description),\n      (0,_tags__WEBPACK_IMPORTED_MODULE_1__.p)(todo.date),\n      (0,_tags__WEBPACK_IMPORTED_MODULE_1__.p)(todo.priority),\n      (0,_tags__WEBPACK_IMPORTED_MODULE_1__.p)(todo.category.name),\n    ],\n    \"card w-50 mx-auto p-5\"\n  )\n);\n\n\n//# sourceURL=webpack://restuarant-page/./src/index.js?");
 
 /***/ }),
 
