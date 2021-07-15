@@ -1,7 +1,10 @@
-import { form, textInput, checkBoxInput, textArea } from "./tags.js";
+import { form, textInput, checkBoxInput, textArea, dateInput } from "./tags.js";
 
 const Form = () => {
-  return form([]);
+  return form([
+    textInput("Enter title"),
+    textArea("Enter description of the todo"),
+  ]);
 };
 
 export default Form;
