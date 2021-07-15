@@ -23,3 +23,6 @@ export const a = (...args) => ele("a", ...args);
 
 export const button = (...args) => ele("button", ...args);
 export const img = (...args) => ele("img", ...args);
+
+export const form = (...args) => ele("form", ...args);
+export const input = (...args) => ele("input", ...args);
