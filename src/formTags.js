@@ -5,6 +5,7 @@ export const input = (...args) => ele("input", ...args);
 export const textArea = (...args) => ele("textArea", ...args);
 export const label = (...args) => ele("label", ...args);
 export const select = (...args) => ele("select", ...args);
+export const option = (...args) => ele("option", ...args);
 
 const customInput = (type) => (placeholder, className, attributes, styles) =>
   input(
