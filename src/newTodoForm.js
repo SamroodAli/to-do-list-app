@@ -12,9 +12,10 @@ const newTodoForm = () => {
   return form([
     textInput("Enter title"),
     textArea("Enter description for the to-do"),
-    labelFor("Enter due date", "todo-date"),
-    dateInput("Enter due date", "", { id: "todo-date" }),
-    numberInput("Enter priority", "", { min: 0, max: 10 }),
+    labelFor("Enter due date", "date"),
+    dateInput("Enter due date", "", { id: "date" }),
+    labelFor("Enter priority", "todo-priority"),
+    numberInput("", "", { min: 0, max: 10, id: "priority" }),
     submitButton(),
   ]);
 };
