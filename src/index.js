@@ -9,9 +9,10 @@ const todos = [];
 
 function submit(form, event) {
   event.preventDefault();
-  const [title, description, date, priority] = Array.from(form.elements).map(
-    (ele) => ele.value
-  );
+  const [title, description, date, priority, option] = Array.from(
+    form.elements
+  ).map((ele) => ele.value);
+  console.log(option);
   const newTodo = new ToDo(title, description, date, priority);
   todos.push(newTodo);
   refresh();

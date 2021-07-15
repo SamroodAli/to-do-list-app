@@ -10,7 +10,13 @@ import {
   submitButton,
 } from "./formTags.js";
 
-const newTodoForm = () => {
+const optionsCreator = (categories) => {
+  return categories.map((category) =>
+    option(category.name, "", { value: category.name })
+  );
+};
+
+const newTodoForm = (categories) => {
   return form([
     textInput("Enter title", "", { name: "title" }),
     textArea("", "", {
@@ -22,7 +28,7 @@ const newTodoForm = () => {
     dateInput("Enter due date", "", { id: "date", name: "date" }),
     labelFor("Enter priority", "todo-priority"),
     numberInput("", "", { min: 0, max: 10, id: "priority", name: "priority" }),
-    select([option("Project 1", "", { value: "Project 1" })]),
+    select(optionsCreator(categories)),
     submitButton(),
   ]);
 };
