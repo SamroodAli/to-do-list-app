@@ -4,6 +4,7 @@ export const form = (...args) => ele("form", ...args);
 export const input = (...args) => ele("input", ...args);
 export const textArea = (...args) => ele("textArea", ...args);
 export const label = (...args) => ele("label", ...args);
+export const select = (...args) => ele("select", ...args);
 
 const customInput = (type) => (placeholder, className, attributes, styles) =>
   input(

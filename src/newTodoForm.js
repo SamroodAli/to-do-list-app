@@ -1,5 +1,6 @@
 import {
   form,
+  select,
   labelFor,
   textInput,
   textArea,
@@ -20,6 +21,7 @@ const newTodoForm = () => {
     dateInput("Enter due date", "", { id: "date", name: "date" }),
     labelFor("Enter priority", "todo-priority"),
     numberInput("", "", { min: 0, max: 10, id: "priority", name: "priority" }),
+    select(),
     submitButton(),
   ]);
 };
