@@ -26,3 +26,6 @@ export const img = (...args) => ele("img", ...args);
 
 export const form = (...args) => ele("form", ...args);
 export const input = (...args) => ele("input", ...args);
+
+export const textInput = (className, styles, attributes) =>
+  ele("input", className, styles, Object.assign({ type: "text" }, attributes));

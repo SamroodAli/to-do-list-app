@@ -1,7 +1,7 @@
-import { form, p } from "./tags.js";
+import { form, input } from "./tags.js";
 
 const Form = () => {
-  return form(p("input"));
+  return form([input("input", "", {}, { type: "password" })]);
 };
 
 export default Form;
