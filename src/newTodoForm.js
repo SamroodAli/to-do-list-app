@@ -1,11 +1,19 @@
-import { form, textInput, checkBoxInput, textArea, dateInput } from "./tags.js";
+import {
+  form,
+  textInput,
+  checkBoxInput,
+  textArea,
+  dateInput,
+  numberInput,
+} from "./tags.js";
 
-const Form = () => {
+const newTodoForm = () => {
   return form([
     textInput("Enter title"),
     textArea("Enter description of the todo"),
     dateInput("Enter due date"),
+    numberInput("Enter priority", "", {}, { min: 0, max: 10 }),
   ]);
 };
 
-export default Form;
+export default newTodoForm;

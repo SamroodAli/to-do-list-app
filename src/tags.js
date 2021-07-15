@@ -39,4 +39,4 @@ const customInput = (type) => (placeholder, className, styles, attributes) =>
 export const textInput = customInput("email");
 export const checkBoxInput = customInput("checkbox");
 export const dateInput = customInput("date");
-export const number = customInput("date");
+export const numberInput = customInput("number");
