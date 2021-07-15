@@ -3,10 +3,10 @@ function element(element, innerHtml, className, styles, attributes) {
 
   if (Array.isArray(innerHtml)) {
     newElement.append(...innerHtml);
-  } else if (typeof innerHtml === 'object') {
+  } else if (typeof innerHtml === "object") {
     newElement.appendChild(innerHtml);
-  } else if (typeof innerHtml === 'string') {
-    newElement.innerText = innerHtml;
+  } else if (typeof innerHtml === "string") {
+    newElement.innerText = innerHtml.toString();
   }
 
   if (className) {
@@ -18,7 +18,9 @@ function element(element, innerHtml, className, styles, attributes) {
   }
 
   if (attributes) {
-    Object.entries(attributes).forEach(([key, value]) => newElement.setAttribute(key, value));
+    Object.entries(attributes).forEach(([key, value]) =>
+      newElement.setAttribute(key, value)
+    );
   }
   return newElement;
 }
