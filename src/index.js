@@ -6,13 +6,8 @@ import newCategoryForm from "./newCategoryForm";
 
 const content = document.getElementById("content");
 
-const project1 = new Category("Project 1");
-const project2 = new Category("Project 2");
-const project3 = new Category("Project 3");
-
 const categories = [];
 
-const form = newTodoForm(categories);
 const categoryForm = newCategoryForm();
 const todos = [];
 
