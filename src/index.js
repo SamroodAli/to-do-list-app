@@ -2,6 +2,7 @@ import newTodoForm from "./newTodoForm.js";
 import ToDo from "./todo.js";
 import todoCard from "./todoCard";
 import Category from "./category.js";
+import newCategoryForm from "./newCategoryForm";
 
 const content = document.getElementById("content");
 
@@ -12,6 +13,7 @@ const project3 = new Category("Project 3");
 const categories = [project1, project2, project3];
 
 const form = newTodoForm(categories);
+const categoryForm = newCategoryForm();
 const todos = [];
 
 function submit(form, event) {
@@ -37,4 +39,4 @@ function refresh() {
 
 form.addEventListener("submit", (event) => submit(form, event));
 
-content.append(form);
+content.append(form, categoryForm);
