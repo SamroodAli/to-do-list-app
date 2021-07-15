@@ -1,7 +1,7 @@
-import { form, textInput, checkBoxInput } from "./tags.js";
+import { form, textInput, checkBoxInput, textArea } from "./tags.js";
 
 const Form = () => {
-  return form([textInput("hello"), checkBoxInput("")]);
+  return form([]);
 };
 
 export default Form;

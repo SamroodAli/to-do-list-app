@@ -26,13 +26,14 @@ export const img = (...args) => ele("img", ...args);
 
 export const form = (...args) => ele("form", ...args);
 export const input = (...args) => ele("input", ...args);
+export const textArea = (...args) => ele("textArea", ...args);
 
-const customInput = (type) => (innerHtml, className, styles, attributes) =>
+const customInput = (type) => (placeholder, className, styles, attributes) =>
   input(
-    innerHtml,
+    undefined,
     className,
     styles,
-    Object.assign({ type, required: "" }, attributes)
+    Object.assign({ type, placeholder, required: "" }, attributes)
   );
 
 export const textInput = customInput("email");
