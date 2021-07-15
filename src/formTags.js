@@ -21,7 +21,7 @@ export const labelFor = (innerHTML, htmlFor, className, styles, attributes) =>
     styles
   );
 
-export const textInput = customInput("email");
+export const textInput = customInput("text");
 export const checkBoxInput = customInput("checkbox");
 export const dateInput = customInput("date");
 export const numberInput = customInput("number");

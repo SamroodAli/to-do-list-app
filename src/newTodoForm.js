@@ -11,7 +11,10 @@ import {
 const newTodoForm = () => {
   return form([
     textInput("Enter title"),
-    textArea("Enter description for the to-do"),
+    textArea("", "", {
+      placeholder: "Enter description for the todo",
+      required: "",
+    }),
     labelFor("Enter due date", "date"),
     dateInput("Enter due date", "", { id: "date" }),
     labelFor("Enter priority", "todo-priority"),
