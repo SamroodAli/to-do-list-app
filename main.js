@@ -36,7 +36,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _newTodoForm__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./newTodoForm */ \"./src/newTodoForm.js\");\n\nconst content = document.getElementById(\"content\");\n\nconst form = (0,_newTodoForm__WEBPACK_IMPORTED_MODULE_0__.default)();\n\nfunction submit(form, event) {\n  event.preventDefault();\n  const toDoInfo = Array.from(form.elements).map((ele) => ele.value);\n  console.log(toDoInfo);\n}\n\nform.addEventListener(\"submit\", (event) => submit(form, event));\n\ncontent.appendChild(form);\n\n\n//# sourceURL=webpack://restuarant-page/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _newTodoForm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./newTodoForm.js */ \"./src/newTodoForm.js\");\n/* harmony import */ var _todo_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./todo.js */ \"./src/todo.js\");\n/* harmony import */ var _todoCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./todoCard */ \"./src/todoCard.js\");\n\n\n\n\nconst content = document.getElementById(\"content\");\n\nconst form = (0,_newTodoForm_js__WEBPACK_IMPORTED_MODULE_0__.default)();\n\nfunction submit(form, event) {\n  event.preventDefault();\n  const [title, description, date, priority] = Array.from(form.elements).map(\n    (ele) => ele.value\n  );\n  console.log(title, description, date, priority);\n}\n\nform.addEventListener(\"submit\", (event) => submit(form, event));\n\ncontent.appendChild(form);\n\n\n//# sourceURL=webpack://restuarant-page/./src/index.js?");
 
 /***/ }),
 
@@ -47,6 +47,36 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _new
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _formTags_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./formTags.js */ \"./src/formTags.js\");\n\n\nconst newTodoForm = () => {\n  return (0,_formTags_js__WEBPACK_IMPORTED_MODULE_0__.form)([\n    (0,_formTags_js__WEBPACK_IMPORTED_MODULE_0__.textInput)(\"Enter title\", \"\", { name: \"title\" }),\n    (0,_formTags_js__WEBPACK_IMPORTED_MODULE_0__.textArea)(\"\", \"\", {\n      placeholder: \"Enter description for the todo\",\n      required: \"\",\n      name: \"description\",\n    }),\n    (0,_formTags_js__WEBPACK_IMPORTED_MODULE_0__.labelFor)(\"Enter due date\", \"date\"),\n    (0,_formTags_js__WEBPACK_IMPORTED_MODULE_0__.dateInput)(\"Enter due date\", \"\", { id: \"date\", name: \"date\" }),\n    (0,_formTags_js__WEBPACK_IMPORTED_MODULE_0__.labelFor)(\"Enter priority\", \"todo-priority\"),\n    (0,_formTags_js__WEBPACK_IMPORTED_MODULE_0__.numberInput)(\"\", \"\", { min: 0, max: 10, id: \"priority\", name: \"priority\" }),\n    (0,_formTags_js__WEBPACK_IMPORTED_MODULE_0__.submitButton)(),\n  ]);\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (newTodoForm);\n\n\n//# sourceURL=webpack://restuarant-page/./src/newTodoForm.js?");
+
+/***/ }),
+
+/***/ "./src/tags.js":
+/*!*********************!*\
+  !*** ./src/tags.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"div\": () => (/* binding */ div),\n/* harmony export */   \"section\": () => (/* binding */ section),\n/* harmony export */   \"header\": () => (/* binding */ header),\n/* harmony export */   \"main\": () => (/* binding */ main),\n/* harmony export */   \"footer\": () => (/* binding */ footer),\n/* harmony export */   \"h1\": () => (/* binding */ h1),\n/* harmony export */   \"h2\": () => (/* binding */ h2),\n/* harmony export */   \"h3\": () => (/* binding */ h3),\n/* harmony export */   \"h4\": () => (/* binding */ h4),\n/* harmony export */   \"h5\": () => (/* binding */ h5),\n/* harmony export */   \"h6\": () => (/* binding */ h6),\n/* harmony export */   \"p\": () => (/* binding */ p),\n/* harmony export */   \"span\": () => (/* binding */ span),\n/* harmony export */   \"ul\": () => (/* binding */ ul),\n/* harmony export */   \"li\": () => (/* binding */ li),\n/* harmony export */   \"nav\": () => (/* binding */ nav),\n/* harmony export */   \"a\": () => (/* binding */ a),\n/* harmony export */   \"button\": () => (/* binding */ button),\n/* harmony export */   \"img\": () => (/* binding */ img)\n/* harmony export */ });\n/* harmony import */ var _element_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./element.js */ \"./src/element.js\");\n\n\nconst div = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"div\", ...args);\nconst section = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"section\", ...args);\nconst header = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"header\", ...args);\nconst main = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"main\", ...args);\nconst footer = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"footer\", ...args);\n\nconst h1 = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"h1\", ...args);\nconst h2 = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"h2\", ...args);\nconst h3 = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"h3\", ...args);\nconst h4 = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"h4\", ...args);\nconst h5 = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"h5\", ...args);\nconst h6 = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"h6\", ...args);\n\nconst p = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"p\", ...args);\nconst span = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"span\", ...args);\nconst ul = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"ul\", ...args);\nconst li = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"li\", ...args);\n\nconst nav = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"nav\", ...args);\nconst a = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"a\", ...args);\n\nconst button = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"button\", ...args);\nconst img = (...args) => (0,_element_js__WEBPACK_IMPORTED_MODULE_0__.default)(\"img\", ...args);\n\n\n//# sourceURL=webpack://restuarant-page/./src/tags.js?");
+
+/***/ }),
+
+/***/ "./src/todo.js":
+/*!*********************!*\
+  !*** ./src/todo.js ***!
+  \*********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass ToDo {\n  constructor(title, description, date, priority, category) {\n    this.title = title;\n    this.description = description;\n    this.date = date;\n    this.priority = priority;\n    this.category = category;\n  }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ToDo);\n\n\n//# sourceURL=webpack://restuarant-page/./src/todo.js?");
+
+/***/ }),
+
+/***/ "./src/todoCard.js":
+/*!*************************!*\
+  !*** ./src/todoCard.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _tags_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./tags.js */ \"./src/tags.js\");\n\n\nconst todoCard = (todo) =>\n  (0,_tags_js__WEBPACK_IMPORTED_MODULE_0__.div)(\n    [\n      (0,_tags_js__WEBPACK_IMPORTED_MODULE_0__.p)(todo.title),\n      (0,_tags_js__WEBPACK_IMPORTED_MODULE_0__.p)(todo.description),\n      (0,_tags_js__WEBPACK_IMPORTED_MODULE_0__.p)(todo.date),\n      (0,_tags_js__WEBPACK_IMPORTED_MODULE_0__.p)(todo.priority),\n      (0,_tags_js__WEBPACK_IMPORTED_MODULE_0__.p)(todo.category.name),\n    ],\n    \"card w-50 mx-auto p-5\"\n  );\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (todoCard);\n\n\n//# sourceURL=webpack://restuarant-page/./src/todoCard.js?");
 
 /***/ })
 
