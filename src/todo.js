@@ -1,5 +1,3 @@
-import Category from "./category";
-
 class ToDo {
   constructor(title, description, date, priority, category) {
     this.title = title;
