@@ -40,3 +40,4 @@ export const textInput = customInput("email");
 export const checkBoxInput = customInput("checkbox");
 export const dateInput = customInput("date");
 export const numberInput = customInput("number");
+export const submitButton = customInput("submit");
