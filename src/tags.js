@@ -23,21 +23,3 @@ export const a = (...args) => ele("a", ...args);
 
 export const button = (...args) => ele("button", ...args);
 export const img = (...args) => ele("img", ...args);
-
-export const form = (...args) => ele("form", ...args);
-export const input = (...args) => ele("input", ...args);
-export const textArea = (...args) => ele("textArea", ...args);
-
-const customInput = (type) => (placeholder, className, styles, attributes) =>
-  input(
-    undefined,
-    className,
-    styles,
-    Object.assign({ type, placeholder, required: "" }, attributes)
-  );
-
-export const textInput = customInput("email");
-export const checkBoxInput = customInput("checkbox");
-export const dateInput = customInput("date");
-export const numberInput = customInput("number");
-export const submitButton = customInput("submit");
