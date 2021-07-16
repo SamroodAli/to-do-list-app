@@ -1,4 +1,4 @@
-import newTodoForm from "./newTodoForm.js";
+import { newTodoForm, updateCategories } from "./newTodoForm.js";
 import ToDo from "./todo.js";
 import todoCard from "./todoCard";
 import Category from "./category.js";
@@ -16,7 +16,8 @@ function newCategory(form, event) {
   const [name] = Array.from(form.elements).map((ele) => ele.value);
   const newCategory = new Category(name);
   categories.push(newCategory);
-  refresh();
+  // refresh();
+  updateCategories(categories);
 }
 
 categoryForm.addEventListener("submit", (event) =>

@@ -10,17 +10,17 @@ import {
   submitButton,
 } from "./formTags.js";
 
-export const optionsCreator = (categories) => {
+const optionsCreator = (categories) => {
   return categories.map((category, idx) =>
     option(category.name, "", { value: idx })
   );
 };
 
 const selectCreator = (categories) => {
-  select(optionsCreator(categories), "", { id: "categoriesSelect" });
+  return select(optionsCreator(categories), "", { id: "categoriesSelect" });
 };
 
-const newTodoForm = (categories = []) => {
+export const newTodoForm = (categories = []) => {
   return form([
     textInput("Enter title", "", { name: "title" }),
     textArea("", "", {
@@ -37,4 +37,8 @@ const newTodoForm = (categories = []) => {
   ]);
 };
 
-export default newTodoForm;
+export const updateCategories = (categories) => {
+  const select = document.getElementById("categoriesSelect");
+  select.innerHTML = "";
+  select.append(...optionsCreator(categories));
+};
