@@ -7,4 +7,5 @@ class ToDo {
     this.category = category;
   }
 }
+
 export default ToDo;

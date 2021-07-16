@@ -1,3 +1,5 @@
+import ToDo from "./todo.js";
+
 import {
   form,
   select,
@@ -20,7 +22,7 @@ const selectCreator = (categories) => {
   return select(optionsCreator(categories), "", { id: "categoriesSelect" });
 };
 
-export const newTodoForm = (categories = []) => {
+const todoForm = (categories = []) => {
   return form([
     textInput("Enter title", "", { name: "title" }),
     textArea("", "", {
@@ -37,7 +39,26 @@ export const newTodoForm = (categories = []) => {
   ]);
 };
 
-export const updateCategories = (categories) => {
+function onFormSubmit(form, event, categories) {
+  event.preventDefault();
+  const [title, description, date, priority, option] = Array.from(
+    form.elements
+  ).map((ele) => ele.value);
+
+  const category = categories[option];
+  const newTodo = new ToDo(title, description, date, priority, category);
+  category.addTodo(newTodo);
+}
+
+export const newTodoForm = (categories) => {
+  const form = todoForm(categories);
+  form.addEventListener("submit", (event) =>
+    onFormSubmit(form, event, categories)
+  );
+  return form;
+};
+
+export const updateTodoForm = (categories) => {
   const select = document.getElementById("categoriesSelect");
   select.innerHTML = "";
   select.append(...optionsCreator(categories));
