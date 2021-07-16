@@ -1,4 +1,5 @@
 import ToDo from "./todo.js";
+import todoCard from "./todoCard";
 
 import {
   form,
@@ -39,6 +40,23 @@ const todoForm = (categories = []) => {
   ]);
 };
 
+function renderTodos(categories) {
+  const todos = [];
+  console.log(categories);
+  categories.forEach((category) => {
+    category.todos.forEach((todo) => {
+      todos.push(todo);
+    });
+  });
+  const todoCards = todos.map((todo) => todoCard(todo));
+  const todoSection = document.getElementById("todos");
+  console.log(todoSection);
+  todoSection.innerHTML = "";
+
+  todoSection.append(...todoCards);
+  return todoCards;
+}
+
 function onFormSubmit(form, event, categories) {
   event.preventDefault();
   const [title, description, date, priority, option] = Array.from(
@@ -48,6 +66,7 @@ function onFormSubmit(form, event, categories) {
   const category = categories[option];
   const newTodo = new ToDo(title, description, date, priority, category);
   category.addTodo(newTodo);
+  renderTodos(categories);
 }
 
 export const newTodoForm = (categories) => {

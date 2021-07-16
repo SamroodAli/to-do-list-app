@@ -1,6 +1,6 @@
 import { form, textInput, submitButton } from "./formTags.js";
 
-const newCategoryForm = (categories) => {
+const newCategoryForm = () => {
   return form([
     textInput("Enter category name", "", { name: "name" }),
     submitButton(),
