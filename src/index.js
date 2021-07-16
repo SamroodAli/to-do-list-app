@@ -1,6 +1,6 @@
 import { newTodoForm, updateTodoForm } from "./newTodoForm.js";
 import Category from "./category.js";
-import newCategoryForm from "./newCategoryForm";
+import newCategoryForm from "./newCategoryForm.js";
 import { div } from "./tags.js";
 import header from "./header.js";
 

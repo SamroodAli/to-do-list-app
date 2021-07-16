@@ -3,6 +3,7 @@ class Category {
     this.name = name;
     this.todos = todos;
   }
+
   addTodo(todo) {
     this.todos.push(todo);
   }

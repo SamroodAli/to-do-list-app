@@ -1,17 +1,15 @@
-import todoCard from "./todoCard";
+import todoCard from './todoCard.js';
 
-export function renderTodos(categories) {
+export default function renderTodos(categories) {
   const todos = [];
-  console.log(categories);
   categories.forEach((category) => {
     category.todos.forEach((todo) => {
       todos.push(todo);
     });
   });
   const todoCards = todos.map((todo) => todoCard(todo));
-  const todoSection = document.getElementById("todos");
-  console.log(todoSection);
-  todoSection.innerHTML = "";
+  const todoSection = document.getElementById('todos');
+  todoSection.innerHTML = '';
 
   todoSection.append(...todoCards);
   return todoCards;
