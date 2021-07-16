@@ -7,25 +7,9 @@ import newCategoryForm from "./newCategoryForm";
 const content = document.getElementById("content");
 
 const categories = [];
-
-const categoryForm = newCategoryForm();
 const todos = [];
 
-function submit(form, event) {
-  event.preventDefault();
-  const [title, description, date, priority, option] = Array.from(
-    form.elements
-  ).map((ele) => ele.value);
-  const newTodo = new ToDo(
-    title,
-    description,
-    date,
-    priority,
-    categories[option]
-  );
-  todos.push(newTodo);
-  refresh();
-}
+const categoryForm = newCategoryForm();
 
 function newCategory(form, event) {
   event.preventDefault();
@@ -38,6 +22,20 @@ function newCategory(form, event) {
 categoryForm.addEventListener("submit", (event) =>
   newCategory(categoryForm, event)
 );
+
+function submit(form, event) {
+  event.preventDefault();
+  const [title, description, date, priority, option] = Array.from(
+    form.elements
+  ).map((ele) => ele.value);
+
+  const category = categories[option];
+  const newTodo = new ToDo(title, description, date, priority, category);
+  todos.push(newTodo);
+  category.addTodo(newTodo);
+  console.log(category.todos);
+  refresh();
+}
 
 function newForm(categories) {
   const form = newTodoForm(categories);
