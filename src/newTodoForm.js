@@ -21,27 +21,24 @@ export const selectCreator = (categories) =>
   select(optionsCreator(categories), "", { id: "categoriesSelect" });
 
 const todoForm = (categories = []) =>
-  div([
-    h2("New Todo form"),
-    form([
-      textInput("Enter title", "", { name: "title" }),
-      textArea("", "", {
-        placeholder: "Enter description for the todo",
-        required: "",
-        name: "description",
-      }),
-      labelFor("Enter due date", "date"),
-      dateInput("Enter due date", "", { id: "date", name: "date" }),
-      labelFor("Enter priority", "todo-priority"),
-      numberInput("", "", {
-        min: 0,
-        max: 10,
-        id: "priority",
-        name: "priority",
-      }),
-      selectCreator(categories),
-      submitButton(),
-    ]),
+  form([
+    textInput("Enter title", "", { name: "title" }),
+    textArea("", "", {
+      placeholder: "Enter description for the todo",
+      required: "",
+      name: "description",
+    }),
+    labelFor("Enter due date", "date"),
+    dateInput("Enter due date", "", { id: "date", name: "date" }),
+    labelFor("Enter priority", "todo-priority"),
+    numberInput("", "", {
+      min: 0,
+      max: 10,
+      id: "priority",
+      name: "priority",
+    }),
+    selectCreator(categories),
+    submitButton(),
   ]);
 
 function onFormSubmit(form, event, categories) {

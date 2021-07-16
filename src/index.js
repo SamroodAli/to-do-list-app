@@ -3,6 +3,7 @@ import Category from "./category.js";
 import newCategoryForm from "./newCategoryForm.js";
 import { div } from "./tags.js";
 import header from "./header.js";
+import "./style.scss";
 
 const content = document.getElementById("content");
 
