@@ -5,7 +5,8 @@ import { div } from "./tags.js";
 
 const content = document.getElementById("content");
 
-const categories = [];
+const project = new Category("default");
+const categories = [project];
 
 const categoryForm = newCategoryForm();
 
