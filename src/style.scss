@@ -4,4 +4,19 @@ body {
 
 form * {
   display: block;
+  margin: 0.5rem;
+}
+
+.form-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+#todos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#todos {
+  width: 100%;
 }

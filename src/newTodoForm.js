@@ -37,6 +37,7 @@ const todoForm = (categories = []) =>
       id: "priority",
       name: "priority",
     }),
+    labelFor("Choose category", "categoriesSelect"),
     selectCreator(categories),
     submitButton(),
   ]);
