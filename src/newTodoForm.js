@@ -1,6 +1,5 @@
-import ToDo from "./todo.js";
-import renderTodos from "./render.js";
-import { div, h2 } from "./tags.js";
+import ToDo from './todo.js';
+import renderTodos from './render.js';
 
 import {
   form,
@@ -12,40 +11,37 @@ import {
   dateInput,
   numberInput,
   submitButton,
-} from "./formTags.js";
+} from './formTags.js';
 
-export const optionsCreator = (categories) =>
-  categories.map((category, idx) => option(category.name, "", { value: idx }));
+export const optionsCreator = (categories) => categories.map((category, idx) => option(category.name, '', { value: idx }));
 
-export const selectCreator = (categories) =>
-  select(optionsCreator(categories), "", { id: "categoriesSelect" });
+export const selectCreator = (categories) => select(optionsCreator(categories), '', { id: 'categoriesSelect' });
 
-const todoForm = (categories = []) =>
-  form([
-    textInput("Enter title", "", { name: "title" }),
-    textArea("", "", {
-      placeholder: "Enter description for the todo",
-      required: "",
-      name: "description",
-    }),
-    labelFor("Enter due date", "date"),
-    dateInput("Enter due date", "", { id: "date", name: "date" }),
-    labelFor("Enter priority", "todo-priority"),
-    numberInput("", "", {
-      min: 0,
-      max: 10,
-      id: "priority",
-      name: "priority",
-    }),
-    labelFor("Choose category", "categoriesSelect"),
-    selectCreator(categories),
-    submitButton(),
-  ]);
+const todoForm = (categories = []) => form([
+  textInput('Enter title', '', { name: 'title' }),
+  textArea('', '', {
+    placeholder: 'Enter description for the todo',
+    required: '',
+    name: 'description',
+  }),
+  labelFor('Enter due date', 'date'),
+  dateInput('Enter due date', '', { id: 'date', name: 'date' }),
+  labelFor('Enter priority', 'todo-priority'),
+  numberInput('', '', {
+    min: 0,
+    max: 10,
+    id: 'priority',
+    name: 'priority',
+  }),
+  labelFor('Choose category', 'categoriesSelect'),
+  selectCreator(categories),
+  submitButton(),
+]);
 
 function onFormSubmit(form, event, categories) {
   event.preventDefault();
   const [title, description, date, priority, option] = Array.from(
-    form.elements
+    form.elements,
   ).map((ele) => ele.value);
 
   const category = categories[option];
@@ -56,14 +52,12 @@ function onFormSubmit(form, event, categories) {
 
 export const newTodoForm = (categories) => {
   const form = todoForm(categories);
-  form.addEventListener("submit", (event) =>
-    onFormSubmit(form, event, categories)
-  );
+  form.addEventListener('submit', (event) => onFormSubmit(form, event, categories));
   return form;
 };
 
 export const updateTodoForm = (categories) => {
-  const select = document.getElementById("categoriesSelect");
-  select.innerHTML = "";
+  const select = document.getElementById('categoriesSelect');
+  select.innerHTML = '';
   select.append(...optionsCreator(categories));
 };

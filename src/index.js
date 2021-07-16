@@ -1,13 +1,13 @@
-import { newTodoForm, updateTodoForm } from "./newTodoForm.js";
-import Category from "./category.js";
-import newCategoryForm from "./newCategoryForm.js";
-import { div, h2, section } from "./tags.js";
-import header from "./header.js";
-import "./style.scss";
+import { newTodoForm, updateTodoForm } from './newTodoForm.js';
+import Category from './category.js';
+import newCategoryForm from './newCategoryForm.js';
+import { div, h2, section } from './tags.js';
+import header from './header.js';
+import './style.scss';
 
-const content = document.getElementById("content");
+const content = document.getElementById('content');
 
-const project = new Category("default");
+const project = new Category('default');
 const categories = [project];
 
 const categoryForm = newCategoryForm();
@@ -20,21 +20,19 @@ function newCategory(form, event) {
   updateTodoForm(categories);
 }
 
-categoryForm.addEventListener("submit", (event) =>
-  newCategory(categoryForm, event)
-);
+categoryForm.addEventListener('submit', (event) => newCategory(categoryForm, event));
 
 function render() {
   content.append(
     header,
     section(
       [
-        div([h2("New To-Do Form"), newTodoForm(categories)]),
-        div([h2("New Category Form"), categoryForm]),
+        div([h2('New To-Do Form'), newTodoForm(categories)]),
+        div([h2('New Category Form'), categoryForm]),
       ],
-      "form-section"
+      'form-section',
     ),
-    div("", "", { id: "todos" })
+    div('', '', { id: 'todos' }),
   );
 }
 render();
