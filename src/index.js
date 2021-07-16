@@ -1,7 +1,7 @@
 import { newTodoForm, updateTodoForm } from "./newTodoForm.js";
 import Category from "./category.js";
 import newCategoryForm from "./newCategoryForm.js";
-import { div } from "./tags.js";
+import { div, h2 } from "./tags.js";
 import header from "./header.js";
 import "./style.scss";
 
@@ -27,8 +27,8 @@ categoryForm.addEventListener("submit", (event) =>
 function render() {
   content.append(
     header,
-    newTodoForm(categories),
-    categoryForm,
+    div([h2("New To-Do Form"), newTodoForm(categories)]),
+    div([h2("New Category Form"), categoryForm]),
     div("", "", { id: "todos" })
   );
 }
