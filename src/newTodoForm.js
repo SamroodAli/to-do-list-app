@@ -1,5 +1,5 @@
 import ToDo from "./todo.js";
-import todoCard from "./todoCard";
+import { renderTodos } from "./render.js";
 
 import {
   form,
@@ -13,13 +13,13 @@ import {
   submitButton,
 } from "./formTags.js";
 
-const optionsCreator = (categories) => {
+export const optionsCreator = (categories) => {
   return categories.map((category, idx) =>
     option(category.name, "", { value: idx })
   );
 };
 
-const selectCreator = (categories) => {
+export const selectCreator = (categories) => {
   return select(optionsCreator(categories), "", { id: "categoriesSelect" });
 };
 
@@ -39,23 +39,6 @@ const todoForm = (categories = []) => {
     submitButton(),
   ]);
 };
-
-function renderTodos(categories) {
-  const todos = [];
-  console.log(categories);
-  categories.forEach((category) => {
-    category.todos.forEach((todo) => {
-      todos.push(todo);
-    });
-  });
-  const todoCards = todos.map((todo) => todoCard(todo));
-  const todoSection = document.getElementById("todos");
-  console.log(todoSection);
-  todoSection.innerHTML = "";
-
-  todoSection.append(...todoCards);
-  return todoCards;
-}
 
 function onFormSubmit(form, event, categories) {
   event.preventDefault();
