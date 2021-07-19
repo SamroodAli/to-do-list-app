@@ -1,4 +1,4 @@
-import todoCard from './todoCard.js';
+import todoCard from "./todoCard.js";
 
 export default function renderTodos(categories) {
   const todos = [];
@@ -8,8 +8,8 @@ export default function renderTodos(categories) {
     });
   });
   const todoCards = todos.map((todo) => todoCard(todo));
-  const todoSection = document.getElementById('todos');
-  todoSection.innerHTML = '';
+  const todoSection = document.getElementById("todos");
+  todoSection.innerHTML = "";
 
   todoSection.append(...todoCards);
   return todoCards;
