@@ -1,4 +1,5 @@
 import ToDo from "../models/todo.js";
+import { setCategories } from "../api/storage.js";
 
 import {
   form,
@@ -49,10 +50,17 @@ function onFormSubmit(form, event, categories) {
     form.elements
   ).map((ele) => ele.value);
 
-  const category = categories[option];
-  const newTodo = new ToDo(title, description, date, priority, category);
-  category.addTodo(newTodo);
-  // renderTodos(categories);
+  const chosenCategory = categories[option];
+  const newTodo = new ToDo(title, description, date, priority);
+  chosenCategory.todos.push(newTodo);
+  const newState = categories.map((category) => {
+    if (category.id == chosenCategory.id) {
+      return chosenCategory;
+    } else {
+      return category;
+    }
+  });
+  setCategories(newState);
 }
 
 export const newTodoForm = (categories) => {

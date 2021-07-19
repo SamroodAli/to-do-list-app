@@ -1,11 +1,9 @@
+import { nanoid } from "nanoid";
 class Category {
   constructor(name, todos = []) {
     this.name = name;
     this.todos = todos;
-  }
-
-  addTodo(todo) {
-    this.todos.push(todo);
+    this.id = nanoid();
   }
 }
 

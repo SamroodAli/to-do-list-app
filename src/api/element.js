@@ -3,7 +3,8 @@ function element(element, innerHtml, className, attributes, styles) {
 
   if (Array.isArray(innerHtml)) {
     newElement.append(...innerHtml);
-  } else if (typeof innerHtml === 'object') {
+  } else if (typeof innerHtml === "object") {
+    console.log(innerHtml, "hi");
     newElement.appendChild(innerHtml);
   } else if (innerHtml) {
     newElement.innerText = innerHtml.toString();
@@ -14,7 +15,9 @@ function element(element, innerHtml, className, attributes, styles) {
   }
 
   if (attributes) {
-    Object.entries(attributes).forEach(([key, value]) => newElement.setAttribute(key, value));
+    Object.entries(attributes).forEach(([key, value]) =>
+      newElement.setAttribute(key, value)
+    );
   }
 
   if (styles) {
