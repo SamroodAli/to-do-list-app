@@ -12,8 +12,11 @@ import {
   submitButton,
 } from "../api/formTags.js";
 
-export const optionsCreator = (categories) =>
-  categories.map((category, idx) => option(category.name, "", { value: idx }));
+export const optionsCreator = (categories) => {
+  return categories.map((category, idx) =>
+    option(category.name, "", { value: idx })
+  );
+};
 
 export const selectCreator = (categories) =>
   select(optionsCreator(categories), "", { id: "categoriesSelect" });

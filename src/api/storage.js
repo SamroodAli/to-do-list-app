@@ -6,16 +6,11 @@ export const store = (key, value) => {
   }
 };
 
-export const get = (key, parse = false) => {
-  if (parse) {
-    return JSON.parse(localStorage.getItem(key));
-  } else {
-    return localStorage.getItem(key);
-  }
-};
+export const get = (key) => JSON.parse(localStorage.getItem(key));
 
 export const setCategories = (categories) => {
   store("categories", categories);
 };
 
 export const getCategories = () => get("categories");
+export const clear = () => localStorage.clear();
