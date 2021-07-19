@@ -15,4 +15,9 @@ export const renderTodos = (categories) => {
   return todoCards;
 };
 
-export const page = (markup) => {};
+export const render = (parent, child) => {
+  parent.append(child);
+  return parent;
+};
+
+export const renderOn = (parent) => (child) => render(child);
