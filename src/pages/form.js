@@ -1,7 +1,7 @@
-import { newTodoForm, updateTodoForm } from "./newTodoForm.js";
-import Category from "./category.js";
-import newCategoryForm from "./newCategoryForm.js";
-import { div, h2, section } from "./api/tags.js";
+import { newTodoForm, updateTodoForm } from "../views/newTodoForm.js";
+import Category from "../models/category.js";
+import newCategoryForm from "../views/newCategoryForm.js";
+import { div, h2, section } from "../api/tags.js";
 import "./style.scss";
 
 const project = new Category("default");

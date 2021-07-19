@@ -1,4 +1,4 @@
-import todoCard from "./todoCard.js";
+import todoCard from "../views/todoCard.js";
 
 export const renderTodos = (categories) => {
   const todos = [];
@@ -13,17 +13,4 @@ export const renderTodos = (categories) => {
 
   todoSection.append(...todoCards);
   return todoCards;
-};
-
-export const render = (parent, child) => {
-  parent.innerHTML = "";
-  parent.append(child);
-  return parent;
-};
-
-export const renderOn = (parent) => (child) => render(parent, child);
-
-export const renderOnId = (id) => {
-  const parent = document.getElementById(id);
-  return renderOn(parent);
 };

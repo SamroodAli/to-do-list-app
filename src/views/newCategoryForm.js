@@ -1,4 +1,4 @@
-import { form, textInput, submitButton } from "./api/formTags.js";
+import { form, textInput, submitButton } from "../api/formTags.js";
 
 const newCategoryForm = () =>
   form([

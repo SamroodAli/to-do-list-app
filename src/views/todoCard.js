@@ -1,4 +1,4 @@
-import { div, p } from "./api/tags.js";
+import { div, p } from "../api/tags.js";
 
 const todoCard = (todo) =>
   div(

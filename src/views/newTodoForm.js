@@ -1,5 +1,4 @@
-import ToDo from "./todo.js";
-import { renderTodos } from "./render.js";
+import ToDo from "../models/todo.js";
 
 import {
   form,
@@ -11,7 +10,7 @@ import {
   dateInput,
   numberInput,
   submitButton,
-} from "./api/formTags.js";
+} from "../api/formTags.js";
 
 export const optionsCreator = (categories) =>
   categories.map((category, idx) => option(category.name, "", { value: idx }));
@@ -50,7 +49,7 @@ function onFormSubmit(form, event, categories) {
   const category = categories[option];
   const newTodo = new ToDo(title, description, date, priority, category);
   category.addTodo(newTodo);
-  renderTodos(categories);
+  // renderTodos(categories);
 }
 
 export const newTodoForm = (categories) => {

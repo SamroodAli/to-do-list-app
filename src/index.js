@@ -1,6 +1,6 @@
-import { renderOnId } from "./render.js";
+import { renderOnId } from "./api/render.js";
 import { h2, eleId } from "./api/tags.js";
-import form from "./form.js";
+import form from "./pages/form.js";
 
 const render = renderOnId("content");
 
