@@ -1,21 +1,21 @@
-import { renderOnId } from "./api/render.js";
-import { eleId } from "./api/render.js";
-import form from "./pages/form.js";
-import CategoryPage from "./pages/categories.js";
-import TodosPage from "./pages/todos";
-import { getCategories } from "./api/storage.js";
-import "./style.scss";
+import { renderOnId, eleId } from './api/render.js';
 
-const render = renderOnId("content");
+import form from './pages/form.js';
+import CategoryPage from './pages/categories.js';
+import TodosPage from './pages/todos.js';
+import { getCategories } from './api/storage.js';
+import './style.scss';
 
-export function changePage(markup) {
+const render = renderOnId('content');
+
+export default function changePage(markup) {
   render(markup);
 }
 
-eleId("categories").addEventListener("click", () => changePage(CategoryPage()));
-eleId("todos").addEventListener("click", () => {
+eleId('categories').addEventListener('click', () => changePage(CategoryPage()));
+eleId('todos').addEventListener('click', () => {
   const categories = getCategories();
   const todos = Object.keys(categories).map((id) => categories[id].todos);
   changePage(TodosPage(todos.flat()));
 });
-eleId("newTodo").addEventListener("click", () => changePage(form()));
+eleId('newTodo').addEventListener('click', () => changePage(form()));

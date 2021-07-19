@@ -1,10 +1,10 @@
-import { newTodoForm, updateTodoForm } from "../views/todoForm.js";
-import Category from "../models/category.js";
-import newCategoryForm from "../views/categoryForm.js";
-import { div, h2, section } from "../api/tags.js";
-import { setCategories, getCategories } from "../api/storage.js";
+import { newTodoForm, updateTodoForm } from '../views/todoForm.js';
+import Category from '../models/category.js';
+import newCategoryForm from '../views/categoryForm.js';
+import { div, h2, section } from '../api/tags.js';
+import { setCategories, getCategories } from '../api/storage.js';
 
-const defaultProject = new Category("default");
+const defaultProject = new Category('default');
 if (!localStorage.length || !getCategories) {
   const newCategories = {};
   newCategories[defaultProject.id] = defaultProject;
@@ -23,16 +23,12 @@ function newCategory(form, event) {
   updateTodoForm(categories);
 }
 
-categoryForm.addEventListener("submit", (event) =>
-  newCategory(categoryForm, event)
-);
+categoryForm.addEventListener('submit', (event) => newCategory(categoryForm, event));
 
-export default (todo = {}, idx) => {
-  return section(
-    [
-      div([h2("New To-Do Form"), newTodoForm(categories, todo, idx)]),
-      div([h2("New Category Form"), categoryForm]),
-    ],
-    "form-section"
-  );
-};
+export default (todo = {}, idx) => section(
+  [
+    div([h2('New To-Do Form'), newTodoForm(categories, todo, idx)]),
+    div([h2('New Category Form'), categoryForm]),
+  ],
+  'form-section',
+);

@@ -1,5 +1,5 @@
 export const render = (parent, child) => {
-  parent.innerHTML = "";
+  parent.innerHTML = '';
   parent.append(child);
   return parent;
 };
@@ -12,3 +12,7 @@ export const renderOnId = (id) => {
 };
 
 export const eleId = (id) => document.getElementById(id);
+
+export const deleteId = (id) => {
+  eleId(id).remove();
+};

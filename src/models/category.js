@@ -1,4 +1,5 @@
-import { nanoid } from "nanoid";
+import { nanoid } from 'nanoid';
+
 class Category {
   constructor(name, todos = []) {
     this.name = name;
