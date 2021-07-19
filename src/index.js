@@ -12,3 +12,5 @@ eleId('todos').addEventListener('click', () => {
   changePage(TodosPage(todos.flat()));
 });
 eleId('newTodo').addEventListener('click', () => changePage(form()));
+
+changePage(CategoryPage());
