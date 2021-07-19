@@ -51,7 +51,13 @@ function onFormSubmit(form, event, categories) {
   ).map((ele) => ele.value);
 
   const chosenCategory = categories[option];
-  const newTodo = new ToDo(title, description, date, priority);
+  const newTodo = new ToDo(
+    title,
+    description,
+    date,
+    priority,
+    chosenCategory.name
+  );
   chosenCategory.todos.push(newTodo);
   const newState = categories.map((category) => {
     if (category.id == chosenCategory.id) {
