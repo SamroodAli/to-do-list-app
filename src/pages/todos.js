@@ -16,8 +16,7 @@ export const renderTodos = (categories) => {
   return todoCards;
 };
 
-const TodosPage = (categories) => {
+const TodosPage = (categories = "All categories") =>
   h2(`todos in ${categories}`);
-};
 
 export default TodosPage;
