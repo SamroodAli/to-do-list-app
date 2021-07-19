@@ -2,7 +2,7 @@ import { newTodoForm, updateTodoForm } from "../views/todoForm.js";
 import Category from "../models/category.js";
 import newCategoryForm from "../views/categoryForm.js";
 import { div, h2, section } from "../api/tags.js";
-import { get, setCategories, getCategories } from "../api/storage.js";
+import { setCategories, getCategories } from "../api/storage.js";
 
 const defaultProject = new Category("default");
 if (!localStorage.length || !getCategories) {
@@ -25,10 +25,11 @@ categoryForm.addEventListener("submit", (event) =>
   newCategory(categoryForm, event)
 );
 
-export default section(
-  [
-    div([h2("New To-Do Form"), newTodoForm(categories)]),
-    div([h2("New Category Form"), categoryForm]),
-  ],
-  "form-section"
-);
+export default (todo = {}) =>
+  section(
+    [
+      div([h2("New To-Do Form"), newTodoForm(categories, todo)]),
+      div([h2("New Category Form"), categoryForm]),
+    ],
+    "form-section"
+  );

@@ -75,8 +75,8 @@ function onFormSubmit(form, event, categories) {
   setCategories(newState);
 }
 
-export const newTodoForm = (categories) => {
-  const form = todoForm(categories);
+export const newTodoForm = (categories, todo = {}) => {
+  const form = todoForm(categories, todo);
   form.addEventListener("submit", (event) =>
     onFormSubmit(form, event, categories)
   );

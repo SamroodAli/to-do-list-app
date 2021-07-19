@@ -18,4 +18,4 @@ eleId("todos").addEventListener("click", () => {
   const todos = categories.map((category) => category.todos);
   changePage(TodosPage(todos.flat()));
 });
-eleId("newTodo").addEventListener("click", () => changePage(form));
+eleId("newTodo").addEventListener("click", () => changePage(form()));
