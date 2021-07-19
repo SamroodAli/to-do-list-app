@@ -8,7 +8,7 @@ import "./style.scss";
 
 const render = renderOnId("content");
 
-function changePage(markup) {
+export function changePage(markup) {
   render(markup);
 }
 
