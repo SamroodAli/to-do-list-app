@@ -27,11 +27,12 @@ categoryForm.addEventListener("submit", (event) =>
   newCategory(categoryForm, event)
 );
 
-export default (todo = {}) =>
-  section(
+export default (todo = {}, idx) => {
+  return section(
     [
-      div([h2("New To-Do Form"), newTodoForm(categories, todo)]),
+      div([h2("New To-Do Form"), newTodoForm(categories, todo, idx)]),
       div([h2("New Category Form"), categoryForm]),
     ],
     "form-section"
   );
+};

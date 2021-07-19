@@ -16,7 +16,6 @@ import {
 export const optionsCreator = (categories, selected) => {
   return Object.values(categories).map((category) => {
     if (category.id === selected) {
-      console.log("here", category.name);
       return option(category.name, "", {
         value: category.id,
         selected: "selected",
@@ -62,13 +61,14 @@ const todoForm = (categories = [], todo = {}) =>
     submitButton(),
   ]);
 
-function onFormSubmit(form, event, categories) {
+function onFormSubmit(form, event, categories, idx) {
   event.preventDefault();
   const [title, description, date, priority, option] = Array.from(
     form.elements
   ).map((ele) => ele.value);
 
   const chosenCategory = categories[option];
+
   const newTodo = new ToDo(
     title,
     description,
@@ -76,15 +76,20 @@ function onFormSubmit(form, event, categories) {
     priority,
     chosenCategory.id
   );
-  chosenCategory.todos.push(newTodo);
+  if (idx != undefined) {
+    console.log(idx, chosenCategory.todos);
+    chosenCategory.todos[idx] = newTodo;
+  } else {
+    chosenCategory.todos.push(newTodo);
+  }
   categories[chosenCategory.id] = chosenCategory;
   setCategories(categories);
 }
 
-export const newTodoForm = (categories, todo = {}) => {
+export const newTodoForm = (categories, todo = {}, idx) => {
   const form = todoForm(categories, todo);
   form.addEventListener("submit", (event) =>
-    onFormSubmit(form, event, categories)
+    onFormSubmit(form, event, categories, idx)
   );
   return form;
 };

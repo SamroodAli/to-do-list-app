@@ -3,11 +3,11 @@ import { changePage } from "../index";
 import form from "../pages/form";
 import { getCategories } from "../api/storage.js";
 
-const onClick = (todos) => {
-  changePage(form(todos));
+const onClick = (todo, idx) => {
+  changePage(form(todo, idx));
 };
 
-const todoCard = (todo) => {
+const todoCard = (todo, idx) => {
   const ele = div(
     [
       p(todo.title),
@@ -19,7 +19,7 @@ const todoCard = (todo) => {
     ],
     "card mx-auto w-100 m-1"
   );
-  ele.addEventListener("click", () => onClick(todo));
+  ele.addEventListener("click", () => onClick(todo, idx));
   return ele;
 };
 
