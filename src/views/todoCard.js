@@ -1,7 +1,7 @@
 import { div, p } from "../api/tags.js";
 
-const todoCard = (todo) =>
-  div(
+const todoCard = (todo) => {
+  const ele = div(
     [
       p(todo.title),
       p(todo.description),
@@ -11,5 +11,8 @@ const todoCard = (todo) =>
     ],
     "card mx-auto w-100 m-1"
   );
+  ele.addEventListener("click", () => {});
+  return ele;
+};
 
 export default todoCard;

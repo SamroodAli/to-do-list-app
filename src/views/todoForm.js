@@ -22,22 +22,28 @@ export const optionsCreator = (categories) => {
 export const selectCreator = (categories) =>
   select(optionsCreator(categories), "", { id: "categoriesSelect" });
 
-const todoForm = (categories = []) =>
+const todoForm = (categories = [], todo = {}) =>
   form([
-    textInput("Enter title", "", { name: "title" }),
-    textArea("", "", {
+    textInput("Enter title", "", { name: "title", value: todo.title || "" }),
+    textArea(todo.description, "", {
       placeholder: "Enter description for the todo",
       required: "",
       name: "description",
+      value: todo.description,
     }),
     labelFor("Enter due date", "date"),
-    dateInput("Enter due date", "", { id: "date", name: "date" }),
+    dateInput("Enter due date", "", {
+      id: "date",
+      name: "date",
+      value: todo.date,
+    }),
     labelFor("Enter priority", "todo-priority"),
     numberInput("", "", {
       min: 0,
       max: 10,
       id: "priority",
       name: "priority",
+      value: todo.priority,
     }),
     labelFor("Choose category", "categoriesSelect"),
     selectCreator(categories),
