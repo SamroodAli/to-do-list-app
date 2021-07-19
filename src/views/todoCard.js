@@ -1,9 +1,8 @@
 import { nanoid } from 'nanoid';
 import { div, p, button } from '../api/tags.js';
-import changePage from '../index.js';
 import form from '../pages/form.js';
 import { getCategories, setCategories } from '../api/storage.js';
-import { deleteId } from '../api/render.js';
+import { deleteId, changePage } from '../api/render.js';
 
 const onClick = (todo, idx) => {
   changePage(form(todo, idx));

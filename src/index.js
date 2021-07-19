@@ -1,16 +1,9 @@
-import { renderOnId, eleId } from './api/render.js';
-
+import { changePage, eleId } from './api/render.js';
 import form from './pages/form.js';
 import CategoryPage from './pages/categories.js';
 import TodosPage from './pages/todos.js';
 import { getCategories } from './api/storage.js';
 import './style.scss';
-
-const render = renderOnId('content');
-
-export default function changePage(markup) {
-  render(markup);
-}
 
 eleId('categories').addEventListener('click', () => changePage(CategoryPage()));
 eleId('todos').addEventListener('click', () => {

@@ -16,3 +16,9 @@ export const eleId = (id) => document.getElementById(id);
 export const deleteId = (id) => {
   eleId(id).remove();
 };
+
+const content = renderOnId('content');
+
+export const changePage = (markup) => {
+  content(markup);
+};

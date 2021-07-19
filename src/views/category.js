@@ -1,6 +1,6 @@
 import { div, h3, button } from '../api/tags.js';
-import changePage from '../index.js';
 import TodosPage from '../pages/todos.js';
+import { changePage } from '../api/render.js';
 
 const onClick = (todos) => () => {
   changePage(TodosPage(todos));
