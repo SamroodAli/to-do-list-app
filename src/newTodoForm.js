@@ -11,7 +11,7 @@ import {
   dateInput,
   numberInput,
   submitButton,
-} from "./formTags.js";
+} from "./api/formTags.js";
 
 export const optionsCreator = (categories) =>
   categories.map((category, idx) => option(category.name, "", { value: idx }));
