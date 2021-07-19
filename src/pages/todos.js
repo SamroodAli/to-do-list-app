@@ -1,4 +1,5 @@
 import todoCard from "../views/todoCard.js";
+import { h2 } from "../api/tags.js";
 
 export const renderTodos = (categories) => {
   const todos = [];
@@ -14,3 +15,9 @@ export const renderTodos = (categories) => {
   todoSection.append(...todoCards);
   return todoCards;
 };
+
+const TodosPage = (categories) => {
+  h2(`todos in ${categories}`);
+};
+
+export default TodosPage;
