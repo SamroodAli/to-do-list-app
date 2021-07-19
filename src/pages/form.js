@@ -6,7 +6,10 @@ import { setCategories, getCategories } from "../api/storage.js";
 
 const defaultProject = new Category("default");
 if (!localStorage.length || !getCategories) {
-  setCategories([defaultProject]);
+  const newCategories = {};
+  console.log(defaultProject.id);
+  newCategories[defaultProject.id] = defaultProject;
+  setCategories(newCategories);
 }
 const categories = getCategories();
 
@@ -16,7 +19,7 @@ function newCategory(form, event) {
   event.preventDefault();
   const [name] = Array.from(form.elements).map((ele) => ele.value);
   const newCategory = new Category(name);
-  categories.push(newCategory);
+  categories[newCategory.id] = newCategory;
   setCategories(categories);
   updateTodoForm(categories);
 }

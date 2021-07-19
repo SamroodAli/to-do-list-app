@@ -20,11 +20,13 @@ export const optionsCreator = (categories) => {
 };
 
 export const selectCreator = (categories) =>
-  select(optionsCreator(categories), "", { id: "categoriesSelect" });
+  select(optionsCreator(categories), "", {
+    id: "categoriesSelect",
+  });
 
 const todoForm = (categories = [], todo = {}) =>
   form([
-    textInput("Enter title", "", { name: "title", value: todo.title || "" }),
+    textInput("Enter title", "", { name: "title", value: todo.title }),
     textArea(todo.description, "", {
       placeholder: "Enter description for the todo",
       required: "",

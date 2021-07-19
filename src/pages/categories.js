@@ -4,7 +4,7 @@ import categoryPartial from "../views/category";
 import { getCategories } from "../api/storage.js";
 
 const categorySection = () => {
-  const categories = getCategories();
+  let categories = Object.values(getCategories());
   return section(categories.map((category) => categoryPartial(category)));
 };
 

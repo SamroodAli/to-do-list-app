@@ -15,7 +15,7 @@ export function changePage(markup) {
 eleId("categories").addEventListener("click", () => changePage(CategoryPage()));
 eleId("todos").addEventListener("click", () => {
   const categories = getCategories();
-  const todos = categories.map((category) => category.todos);
+  const todos = Object.keys(categories).map((id) => categories[id].todos);
   changePage(TodosPage(todos.flat()));
 });
 eleId("newTodo").addEventListener("click", () => changePage(form()));
