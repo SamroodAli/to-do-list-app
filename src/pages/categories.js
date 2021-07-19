@@ -1,4 +1,4 @@
-import { h2, section } from "../api/tags.js";
+import { section } from "../api/tags.js";
 import categoryPartial from "../views/category";
 
 import { getCategories } from "../api/storage.js";

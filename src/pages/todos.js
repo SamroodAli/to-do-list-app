@@ -1,5 +1,4 @@
 import todoCard from "../views/todoCard.js";
-import { h2 } from "../api/tags.js";
 import { section } from "../api/tags.js";
 
 const TodosPage = (todos = []) => {
