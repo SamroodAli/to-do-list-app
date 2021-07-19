@@ -35,4 +35,4 @@ function render() {
     div("", "", { id: "todos" })
   );
 }
-render();
+// render();
