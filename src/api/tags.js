@@ -23,5 +23,3 @@ export const a = (...args) => ele("a", ...args);
 
 export const button = (...args) => ele("button", ...args);
 export const img = (...args) => ele("img", ...args);
-
-export const eleId = (id) => document.getElementById(id);

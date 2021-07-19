@@ -1,5 +1,6 @@
 import { renderOnId } from "./api/render.js";
-import { h2, eleId } from "./api/tags.js";
+import { h2 } from "./api/tags.js";
+import { eleId } from "./api/render.js";
 import form from "./pages/form.js";
 
 const render = renderOnId("content");

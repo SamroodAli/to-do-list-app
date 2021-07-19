@@ -10,3 +10,5 @@ export const renderOnId = (id) => {
   const parent = document.getElementById(id);
   return renderOn(parent);
 };
+
+export const eleId = (id) => document.getElementById(id);
