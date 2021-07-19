@@ -1,5 +1,5 @@
 import ToDo from "./todo.js";
-import renderTodos from "./render.js";
+import { renderTodos } from "./render.js";
 
 import {
   form,

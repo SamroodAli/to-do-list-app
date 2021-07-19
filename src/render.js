@@ -1,6 +1,6 @@
 import todoCard from "./todoCard.js";
 
-export default function renderTodos(categories) {
+export const renderTodos = (categories) => {
   const todos = [];
   categories.forEach((category) => {
     category.todos.forEach((todo) => {
@@ -13,4 +13,6 @@ export default function renderTodos(categories) {
 
   todoSection.append(...todoCards);
   return todoCards;
-}
+};
+
+export const page = (markup) => {};
