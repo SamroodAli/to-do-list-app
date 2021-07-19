@@ -16,6 +16,7 @@ export const renderTodos = (categories) => {
 };
 
 export const render = (parent, child) => {
+  parent.innerHTML = "";
   parent.append(child);
   return parent;
 };
