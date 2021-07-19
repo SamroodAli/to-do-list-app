@@ -14,8 +14,8 @@ import {
 } from "../api/formTags.js";
 
 export const optionsCreator = (categories) => {
-  return categories.map((category, idx) =>
-    option(category.name, "", { value: idx })
+  return Object.values(categories).map((category) =>
+    option(category.name, "", { value: category.id })
   );
 };
 
@@ -26,7 +26,7 @@ export const selectCreator = (categories) =>
 
 const todoForm = (categories = [], todo = {}) =>
   form([
-    textInput("Enter title", "", { name: "title", value: todo.title }),
+    textInput("Enter title", "", { name: "title", value: todo.title || "" }),
     textArea(todo.description, "", {
       placeholder: "Enter description for the todo",
       required: "",
@@ -64,17 +64,11 @@ function onFormSubmit(form, event, categories) {
     description,
     date,
     priority,
-    chosenCategory.name
+    chosenCategory.id
   );
   chosenCategory.todos.push(newTodo);
-  const newState = categories.map((category) => {
-    if (category.id == chosenCategory.id) {
-      return chosenCategory;
-    } else {
-      return category;
-    }
-  });
-  setCategories(newState);
+  categories[chosenCategory.id] = chosenCategory;
+  setCategories(categories);
 }
 
 export const newTodoForm = (categories, todo = {}) => {

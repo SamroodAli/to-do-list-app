@@ -1,10 +1,11 @@
 function element(element, innerHtml, className, attributes, styles) {
+  console.log(innerHtml);
+
   const newElement = document.createElement(element);
 
   if (Array.isArray(innerHtml)) {
     newElement.append(...innerHtml);
   } else if (typeof innerHtml === "object") {
-    console.log(innerHtml, "hi");
     newElement.appendChild(innerHtml);
   } else if (innerHtml) {
     newElement.innerText = innerHtml.toString();

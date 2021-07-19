@@ -7,7 +7,6 @@ import { setCategories, getCategories } from "../api/storage.js";
 const defaultProject = new Category("default");
 if (!localStorage.length || !getCategories) {
   const newCategories = {};
-  console.log(defaultProject.id);
   newCategories[defaultProject.id] = defaultProject;
   setCategories(newCategories);
 }
