@@ -2,7 +2,6 @@ import { newTodoForm, updateTodoForm } from "../views/todoForm.js";
 import Category from "../models/category.js";
 import newCategoryForm from "../views/categoryForm.js";
 import { div, h2, section } from "../api/tags.js";
-import "./style.scss";
 
 const project = new Category("default");
 const categories = [project];
