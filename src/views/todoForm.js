@@ -13,14 +13,24 @@ import {
   submitButton,
 } from "../api/formTags.js";
 
-export const optionsCreator = (categories) => {
-  return Object.values(categories).map((category) =>
-    option(category.name, "", { value: category.id })
-  );
+export const optionsCreator = (categories, selected) => {
+  return Object.values(categories).map((category) => {
+    if (category.id === selected) {
+      console.log("here", category.name);
+      return option(category.name, "", {
+        value: category.id,
+        selected: "selected",
+      });
+    } else {
+      return option(category.name, "", {
+        value: category.id,
+      });
+    }
+  });
 };
 
-export const selectCreator = (categories) =>
-  select(optionsCreator(categories), "", {
+export const selectCreator = (categories, selected) =>
+  select(optionsCreator(categories, selected), "", {
     id: "categoriesSelect",
   });
 
@@ -48,7 +58,7 @@ const todoForm = (categories = [], todo = {}) =>
       value: todo.priority,
     }),
     labelFor("Choose category", "categoriesSelect"),
-    selectCreator(categories),
+    selectCreator(categories, todo.category),
     submitButton(),
   ]);
 

@@ -1,6 +1,4 @@
 function element(element, innerHtml, className, attributes, styles) {
-  console.log(innerHtml);
-
   const newElement = document.createElement(element);
 
   if (Array.isArray(innerHtml)) {
