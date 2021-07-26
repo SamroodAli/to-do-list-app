@@ -1,10 +1,10 @@
 {
-  "name": "restuarant-page",
+  "name": "to-do-list-page",
   "version": "1.0.0",
-  "description": "A resturant page using webpack",
+  "description": "A to do list app page built using webpack",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack ",
     "dev": "webpack --serve --mode development --open",
     "serve": "serve dist",
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SamroodAli/restuarant-page.git"
+    "url": "git+https://github.com/SamroodAli/to-do-list-app.git"
   },
   "author": "Samrood Ali",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SamroodAli/restuarant-page/issues"
+    "url": "https://github.com/SamroodAli/to-do-list-app/issues"
   },
-  "homepage": "https://github.com/SamroodAli/restuarant-page#readme",
+  "homepage": "https://github.com/SamroodAli/to-do-list-app#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^5.2.6",
@@ -43,6 +43,7 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.14.8",
     "nanoid": "^3.1.23"
   }
 }
