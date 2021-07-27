@@ -128,3 +128,21 @@ test("testing h6 wrapper for dom element", () => {
   expect(actual.innerText).toEqual("Hello world");
   expect(actual.outerHTML).toEqual('<h6 class="className"></h6>');
 });
+
+test("testing p wrapper for dom element", () => {
+  const actual = p("Hello world", "className");
+  const expected = document.createElement("div");
+  expected.className = "className";
+  expect(actual).toHaveClass("className");
+  expect(actual.innerText).toEqual("Hello world");
+  expect(actual.outerHTML).toEqual('<p class="className"></p>');
+});
+
+test("testing span wrapper for dom element", () => {
+  const actual = span("Hello world", "className");
+  const expected = document.createElement("div");
+  expected.className = "className";
+  expect(actual).toHaveClass("className");
+  expect(actual.innerText).toEqual("Hello world");
+  expect(actual.outerHTML).toEqual('<span class="className"></span>');
+});
