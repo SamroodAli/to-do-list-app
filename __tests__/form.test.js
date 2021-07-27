@@ -102,3 +102,10 @@ test("dateInput function which returns an input element", () => {
     '<input class="className" type="date" placeholder="name" required="">'
   );
 });
+
+test("numberInput function which returns an input element", () => {
+  const actual = numberInput("name", "className", {}, {});
+  expect(actual.outerHTML).toEqual(
+    '<input class="className" type="number" placeholder="name" required="">'
+  );
+});
