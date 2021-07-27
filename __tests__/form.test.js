@@ -6,6 +6,7 @@ import {
   label,
   select,
   option,
+  customInput,
 } from "../src/api/formTags.js";
 
 test("testing form wrapper for dom element", () => {
@@ -60,4 +61,12 @@ test("testing form wrapper for dom element", () => {
   expect(actual).toHaveClass("className");
   expect(actual.innerText).toEqual("Hello world");
   expect(actual.outerHTML).toEqual('<option class="className"></option>');
+});
+
+test("customInput function which returns an input element", () => {
+  const fn = customInput("text");
+  const actual = fn("name", "className", {}, {});
+  expect(actual.outerHTML).toEqual(
+    '<input class="className" type="text" placeholder="name" required="">'
+  );
 });
