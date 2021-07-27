@@ -1,33 +1,39 @@
 {
-  "name": "to-do-list-page",
+  "name": "restuarant-page",
   "version": "1.0.0",
-  "description": "A to do list app page built using webpack",
+  "description": "A resturant page using webpack",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack ",
-    "dev": "webpack --serve --mode development --open",
+    "build": "webpack --config webpack/webpack.config.prod.js",
+    "live": "git subtree push --prefix dist origin gh-pages",
+    "publish": "npm run build;npm run live",
+    "dev": "webpack serve --config webpack/webpack.config.dev.js",
     "serve": "serve dist",
     "lint": "npx stylelint '**/*.{css,scss}' --fix",
-    "eslint": "npx eslint . --fix"
+    "hint": "npx hint --telemetry=off .",
+    "eslint": "npx eslint . --fix",
+    "linters": "npm run lint;npm run eslint;npm run hint"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SamroodAli/to-do-list-app.git"
+    "url": "git+https://github.com/SamroodAli/restuarant-page.git"
   },
   "author": "Samrood Ali",
   "license": "ISC",
+  "homepage": "https://github.com/SamroodAli/restuarant-page#readme",
   "bugs": {
-    "url": "https://github.com/SamroodAli/to-do-list-app/issues"
+    "url": "https://github.com/SamroodAli/restuarant-page/issues"
   },
-  "homepage": "https://github.com/SamroodAli/to-do-list-app#readme",
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.14.1",
     "babel-eslint": "^10.1.0",
     "css-loader": "^5.2.6",
     "eslint": "^7.30.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4",
     "hint": "^6.1.4",
+    "html-webpack-plugin": "^5.3.2",
     "jest": "^27.0.6",
     "sass": "^1.35.2",
     "sass-loader": "^12.1.0",
@@ -43,7 +49,6 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
-    "@babel/preset-env": "^7.14.8",
-    "nanoid": "^3.1.23"
+    "@babel/preset-env": "^7.14.8"
   }
 }
