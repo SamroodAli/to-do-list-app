@@ -43,3 +43,12 @@ test("testing form wrapper for dom element", () => {
   expect(actual.innerText).toEqual("Hello world");
   expect(actual.outerHTML).toEqual('<label class="className"></label>');
 });
+
+test("testing form wrapper for dom element", () => {
+  const actual = option("Hello world", "className");
+  const expected = document.createElement("option");
+  expected.className = "className";
+  expect(actual).toHaveClass("className");
+  expect(actual.innerText).toEqual("Hello world");
+  expect(actual.outerHTML).toEqual('<option class="className"></option>');
+});
