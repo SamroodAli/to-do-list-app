@@ -38,3 +38,12 @@ test("testing div wrapper for dom element", () => {
   expect(actual.innerText).toEqual("Hello world");
   expect(actual.outerHTML).toEqual('<div class="className"></div>');
 });
+
+test("testing section wrapper for dom element", () => {
+  const actual = div("Hello world", "className");
+  const expected = document.createElement("div");
+  expected.className = "className";
+  expect(actual).toHaveClass("className");
+  expect(actual.innerText).toEqual("Hello world");
+  expect(actual.outerHTML).toEqual('<div class="className"></div>');
+});
