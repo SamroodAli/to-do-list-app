@@ -26,6 +26,7 @@
     "url": "https://github.com/SamroodAli/restuarant-page/issues"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.14.8",
     "@testing-library/jest-dom": "^5.14.1",
     "babel-eslint": "^10.1.0",
     "css-loader": "^5.2.6",
@@ -46,8 +47,7 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.44.0",
     "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2",
-    "@babel/preset-env": "^7.14.8"
+    "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
     "nanoid": "^3.1.23"

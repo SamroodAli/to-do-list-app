@@ -6,19 +6,14 @@ export const render = (parent, child) => {
 
 export const renderOn = (parent) => (child) => render(parent, child);
 
-export const renderOnId = (id) => {
-  const parent = document.getElementById(id);
-  return renderOn(parent);
-};
-
 export const eleId = (id) => document.getElementById(id);
 
 export const deleteId = (id) => {
   eleId(id).remove();
 };
 
-const content = renderOnId("content");
-
+const content = document.getElementById("content");
+const contentRender = renderOn(content);
 export const changePage = (markup) => {
-  content(markup);
+  contentRender(markup);
 };

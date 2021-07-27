@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import document from "./document.js";
-import { render, renderOn, renderOnId } from "../src/api/render.js";
+import { render, renderOn, eleId } from "../src/api/render.js";
 
 test("test render function to append child with parent", () => {
   const div = document.createElement("div");
@@ -10,21 +10,19 @@ test("test render function to append child with parent", () => {
 });
 
 describe("testing higher order function renderON", () => {
-  const div = document.createElement("div");
-  const p = document.createElement("p");
-  const actual = renderOn(div);
-
   it("should return a function", () => {
     expect(typeof renderOn(div)).toBe("function");
   });
+  const div = document.createElement("div");
+  const p = document.createElement("p");
 
+  const actual = renderOn(div);
   actual(p);
   expect(div.innerHTML).toBe(p.outerHTML);
 });
 
-describe("testing higher order function renderId", () => {
-  const content = document.getElementById("content");
-  it("should return a function", () => {
-    expect(typeof renderOnId(content)).toBe("function");
-  });
+test("test eleId function return an element with id", () => {
+  const actual = eleId("content");
+  const expected = document.getElementById("content");
+  expect(actual).toBe(expected);
 });
