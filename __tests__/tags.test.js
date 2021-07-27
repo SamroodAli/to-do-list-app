@@ -65,3 +65,12 @@ test("testing main wrapper for dom element", () => {
   expect(actual.innerText).toEqual("Hello world");
   expect(actual.outerHTML).toEqual('<main class="className"></main>');
 });
+
+test("testing footer wrapper for dom element", () => {
+  const actual = footer("Hello world", "className");
+  const expected = document.createElement("div");
+  expected.className = "className";
+  expect(actual).toHaveClass("className");
+  expect(actual.innerText).toEqual("Hello world");
+  expect(actual.outerHTML).toEqual('<footer class="className"></footer>');
+});
