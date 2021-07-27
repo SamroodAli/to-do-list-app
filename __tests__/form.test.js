@@ -88,3 +88,10 @@ test("textInput function which returns an input element", () => {
     '<input class="className" type="text" placeholder="name" required="">'
   );
 });
+
+test("checkboxInput function which returns an input element", () => {
+  const actual = checkBoxInput("name", "className", {}, {});
+  expect(actual.outerHTML).toEqual(
+    '<input class="className" type="checkbox" placeholder="name" required="">'
+  );
+});
