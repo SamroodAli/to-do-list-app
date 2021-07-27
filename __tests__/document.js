@@ -17,6 +17,7 @@ const html = `
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+  <div id="deleteMe"></div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">TODO APP</a>
