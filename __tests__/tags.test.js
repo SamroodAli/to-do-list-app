@@ -173,3 +173,12 @@ test("testing li wrapper for dom element", () => {
   expect(actual.innerText).toEqual("Hello world");
   expect(actual.outerHTML).toEqual('<li class="className"></li>');
 });
+
+test("testing a wrapper for dom element", () => {
+  const actual = a("Hello world", "className", { href: "#" });
+  const expected = document.createElement("div");
+  expected.className = "className";
+  expect(actual).toHaveClass("className");
+  expect(actual.innerText).toEqual("Hello world");
+  expect(actual.outerHTML).toEqual('<a class="className" href="#"></a>');
+});
