@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import document from "./document.js";
-import { render, renderOn, eleId } from "../src/api/render.js";
+import { render, renderOn, eleId, deleteId } from "../src/api/render.js";
 
 test("test render function to append child with parent", () => {
   const div = document.createElement("div");
@@ -25,4 +25,10 @@ test("test eleId function return an element with id", () => {
   const actual = eleId("content");
   const expected = document.getElementById("content");
   expect(actual).toBe(expected);
+});
+
+test("deleteId function removes a dom element", () => {
+  deleteId("content");
+  const actual = document.getElementById("content");
+  expect(actual).toBe(undefined);
 });
