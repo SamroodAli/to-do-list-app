@@ -25,3 +25,12 @@ test("testing form wrapper for dom element", () => {
   expect(actual.innerText).toEqual("Hello world");
   expect(actual.outerHTML).toEqual('<input class="className">');
 });
+
+test("testing form wrapper for dom element", () => {
+  const actual = textArea("Hello world", "className");
+  const expected = document.createElement("textArea");
+  expected.className = "className";
+  expect(actual).toHaveClass("className");
+  expect(actual.innerText).toEqual("Hello world");
+  expect(actual.outerHTML).toEqual('<textarea class="className"></textarea>');
+});
