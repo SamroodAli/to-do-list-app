@@ -109,3 +109,10 @@ test("numberInput function which returns an input element", () => {
     '<input class="className" type="number" placeholder="name" required="">'
   );
 });
+
+test("submitButton function which returns an input element", () => {
+  const actual = submitButton("name", "className", {}, {});
+  expect(actual.outerHTML).toEqual(
+    '<input class="className" type="submit" placeholder="name" required="">'
+  );
+});
