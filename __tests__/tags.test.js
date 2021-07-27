@@ -164,3 +164,12 @@ test("testing nav wrapper for dom element", () => {
   expect(actual.innerText).toEqual("Hello world");
   expect(actual.outerHTML).toEqual('<nav class="className"></nav>');
 });
+
+test("testing li wrapper for dom element", () => {
+  const actual = li("Hello world", "className");
+  const expected = document.createElement("div");
+  expected.className = "className";
+  expect(actual).toHaveClass("className");
+  expect(actual.innerText).toEqual("Hello world");
+  expect(actual.outerHTML).toEqual('<li class="className"></li>');
+});
