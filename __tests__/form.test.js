@@ -7,6 +7,7 @@ import {
   select,
   option,
   customInput,
+  labelFor,
 } from "../src/api/formTags.js";
 
 test("testing form wrapper for dom element", () => {
@@ -69,4 +70,9 @@ test("customInput function which returns an input element", () => {
   expect(actual.outerHTML).toEqual(
     '<input class="className" type="text" placeholder="name" required="">'
   );
+});
+
+test("labelFor function", () => {
+  const actual = labelFor("content", "name", "className", {}, {});
+  expect(actual.outerHTML).toBe('<label class="className" for="name"></label>');
 });
