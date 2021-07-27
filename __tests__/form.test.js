@@ -95,3 +95,10 @@ test("checkboxInput function which returns an input element", () => {
     '<input class="className" type="checkbox" placeholder="name" required="">'
   );
 });
+
+test("dateInput function which returns an input element", () => {
+  const actual = dateInput("name", "className", {}, {});
+  expect(actual.outerHTML).toEqual(
+    '<input class="className" type="date" placeholder="name" required="">'
+  );
+});
