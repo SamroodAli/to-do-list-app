@@ -1,4 +1,4 @@
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 
 const html = `
 <!DOCTYPE html>
@@ -17,7 +17,6 @@ const html = `
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- navbars -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">TODO APP</a>
@@ -49,7 +48,6 @@ const html = `
         </div>
       </div>
     </nav>
-    <!-- navbar end -->
     <div id="content"></div>
 
     <script
@@ -64,7 +62,7 @@ const html = `
 
 document.body.innerHTML = html;
 
-test('testing index.html page in source', () => {
+test("testing index.html page in source", () => {
   expect(document.body).toContainHTML(html);
 });
 
