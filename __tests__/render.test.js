@@ -30,5 +30,5 @@ test("test eleId function return an element with id", () => {
 test("deleteId function removes a dom element", () => {
   deleteId("content");
   const actual = document.getElementById("content");
-  expect(actual).toBe(undefined);
+  expect(actual).toBe(null);
 });
