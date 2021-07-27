@@ -1,4 +1,4 @@
-function element(element, innerHtml, className, attributes, styles) {
+const element = (element, innerHtml, className, attributes, styles) => {
   const newElement = document.createElement(element);
 
   if (Array.isArray(innerHtml)) {
@@ -22,6 +22,6 @@ function element(element, innerHtml, className, attributes, styles) {
   }
 
   return newElement;
-}
+};
 
 export default element;
