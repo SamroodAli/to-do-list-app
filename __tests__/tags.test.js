@@ -45,5 +45,14 @@ test("testing section wrapper for dom element", () => {
   expected.className = "className";
   expect(actual).toHaveClass("className");
   expect(actual.innerText).toEqual("Hello world");
-  expect(actual.outerHTML).toEqual('<div class="className"></div>');
+  expect(actual.outerHTML).toEqual('<section class="className"></section>');
+});
+
+test("testing header wrapper for dom element", () => {
+  const actual = div("Hello world", "className");
+  const expected = document.createElement("div");
+  expected.className = "className";
+  expect(actual).toHaveClass("className");
+  expect(actual.innerText).toEqual("Hello world");
+  expect(actual.outerHTML).toEqual('<header class="className"></header>');
 });
