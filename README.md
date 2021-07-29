@@ -47,6 +47,14 @@ npm run build
 npm run serve
 ```
 * Press `Ctrl + c` to exit the `npm run serve` session in your terminal.
+
+### Testing the application
+
+* Run the command to run tests
+```sh
+  npm run test
+```
+
 ## Author
 
 ![Samrood Ali's GitHub stats](https://github-readme-stats.vercel.app/api?username=SamroodAli&count_private=true&theme=dark&show_icons=true)
