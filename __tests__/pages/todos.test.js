@@ -11,5 +11,5 @@ test("todos page test markup", () => {
   const categories = { categoryid: { name: "project1" } };
 
   const actual = TodosPage([todo], categories);
-  expect(actual.innerHTML).toEqual();
+  expect(actual.outerHTML).toEqual();
 });
