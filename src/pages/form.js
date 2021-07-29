@@ -14,14 +14,14 @@ const categories = getCategories();
 
 const categoryForm = newCategoryForm();
 
-function newCategory(form, event) {
+const newCategory = (form, event) => {
   event.preventDefault();
   const [name] = Array.from(form.elements).map((ele) => ele.value);
   const newCategory = new Category(name);
-  categories[newCategory.id] = newCategory;
+  categories[newCategory.name] = newCategory;
   setCategories(categories);
   updateTodoForm(categories);
-}
+};
 
 categoryForm.addEventListener('submit', (event) => newCategory(categoryForm, event));
 
@@ -30,5 +30,6 @@ export default (todo = {}, idx) => section(
     div([h2('New To-Do Form'), newTodoForm(categories, todo, idx)]),
     div([h2('New Category Form'), categoryForm]),
   ],
-  'form-section',
+  '',
+  { id: 'form-section' },
 );

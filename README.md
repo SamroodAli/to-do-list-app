@@ -1,5 +1,6 @@
 # TO DO List project
   A todo list app built using Web APIs and webpack to bundle modules.
+  
 ## Built With
 - CSS Bootstrap
 - Javascript
@@ -46,6 +47,16 @@ npm run build
 npm run serve
 ```
 * Press `Ctrl + c` to exit the `npm run serve` session in your terminal.
+
+### Testing the application
+
+* Run the command to run tests
+```sh
+  npm run test
+```
+* Press `q` to exit the test session
+* Press `a` to run the tests again.
+
 ## Author
 
 ![Samrood Ali's GitHub stats](https://github-readme-stats.vercel.app/api?username=SamroodAli&count_private=true&theme=dark&show_icons=true)
@@ -58,7 +69,7 @@ npm run serve
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/SamroodAli/to-do-list-app/issues/).
 
 ## Show your support
 

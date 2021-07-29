@@ -13,4 +13,10 @@ export const setCategories = (categories) => {
 };
 
 export const getCategories = () => get('categories');
+
 export const clear = () => localStorage.clear();
+
+export const categoryValues = () => Object.values(getCategories());
+export const categoryTodos = () => categoryValues()
+  .map((category) => category.todos)
+  .flat();

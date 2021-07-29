@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import { div, p, button } from '../api/tags.js';
 import form from '../pages/form.js';
 import { getCategories, setCategories } from '../api/storage.js';
@@ -16,7 +15,7 @@ const onDelete = (id, categoryId) => {
 };
 
 const todoCard = (todo, idx) => {
-  const id = nanoid();
+  const id = `todo-${idx}`;
 
   const editButton = button('edit Todo');
   editButton.addEventListener('click', () => onClick(todo, idx));
@@ -30,7 +29,7 @@ const todoCard = (todo, idx) => {
       p(todo.description),
       p(todo.date),
       p(todo.priority),
-      p(getCategories()[todo.category].name),
+      p(todo.category),
       editButton,
       deleteButton,
     ],

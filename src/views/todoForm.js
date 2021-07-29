@@ -16,14 +16,14 @@ import {
 export const optionsCreator = (categories, selected) => {
   const categoriesArray = Object.values(categories);
   return categoriesArray.map((category) => {
-    if (category.id === selected) {
+    if (category.name === selected) {
       return option(category.name, '', {
-        value: category.id,
+        value: category.name,
         selected: 'selected',
       });
     }
     return option(category.name, '', {
-      value: category.id,
+      value: category.name,
     });
   });
 };
@@ -72,14 +72,14 @@ function onFormSubmit(form, event, categories, idx) {
     description,
     date,
     priority,
-    chosenCategory.id,
+    chosenCategory.name,
   );
   if (idx !== undefined) {
     chosenCategory.todos[idx] = newTodo;
   } else {
     chosenCategory.todos.push(newTodo);
   }
-  categories[chosenCategory.id] = chosenCategory;
+  categories[chosenCategory.name] = chosenCategory;
   setCategories(categories);
 }
 
@@ -93,4 +93,5 @@ export const updateTodoForm = (categories) => {
   const select = document.getElementById('categoriesSelect');
   select.innerHTML = '';
   select.append(...optionsCreator(categories));
+  return select;
 };

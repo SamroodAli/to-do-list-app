@@ -1,11 +1,10 @@
+import { categoryValues } from '../api/storage.js';
 import { section } from '../api/tags.js';
 import categoryPartial from '../views/category.js';
 
-import { getCategories } from '../api/storage.js';
-
-const categorySection = () => {
-  const categories = Object.values(getCategories());
-  return section(categories.map((category) => categoryPartial(category)));
+const categorySection = (categories = categoryValues()) => {
+  const categoryPartials = categories.map((category) => categoryPartial(category));
+  return section(categoryPartials);
 };
 
 export default categorySection;

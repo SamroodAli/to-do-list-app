@@ -7,21 +7,22 @@ export const label = (...args) => ele('label', ...args);
 export const select = (...args) => ele('select', ...args);
 export const option = (...args) => ele('option', ...args);
 
-const customInput = (type) => (placeholder, className, attributes, styles) => input(
+export const customInput = (type) => (placeholder, className, attributes, styles) => input(
   undefined,
   className,
   {
-    type, placeholder, required: '', ...attributes,
+    type,
+    placeholder,
+    required: '',
+    ...attributes,
   },
   styles,
 );
 
-export const labelFor = (innerHTML, htmlFor, className, styles, attributes) => label(
-  innerHTML,
-  className,
-  { for: htmlFor, ...attributes },
-  styles,
-);
+export const labelFor = (innerHTML, htmlFor, className, styles, attributes) => {
+  const attributesForElement = { for: htmlFor, ...attributes };
+  return label(innerHTML, className, attributesForElement, styles);
+};
 
 export const textInput = customInput('text');
 export const checkBoxInput = customInput('checkbox');
