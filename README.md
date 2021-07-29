@@ -54,6 +54,8 @@ npm run serve
 ```sh
   npm run test
 ```
+* Press `q` to exit the test session
+* Press `a` to run the tests again.
 
 ## Author
 
