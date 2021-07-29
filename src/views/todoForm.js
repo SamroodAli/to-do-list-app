@@ -98,4 +98,5 @@ export const updateTodoForm = (categories) => {
   const select = document.getElementById("categoriesSelect");
   select.innerHTML = "";
   select.append(...optionsCreator(categories));
+  return select;
 };

@@ -27,3 +27,12 @@ test("selectCreator in views/todoForm", () => {
     '<select id="categoriesSelect"><option value="undefined"></option></select>';
   expect(actual.outerHTML).toEqual(expected);
 });
+
+test("test updateTodoForm in views/todoForm", () => {
+  document.body.innerHTML = `
+    <div id="categoriesSelect">Hello world</div>
+  `;
+  const actual = updateTodoForm(categories);
+  const expected = '<option value="undefined" selected="selected"></option>';
+  expect(actual.innerHTML).toEqual(expected);
+});
