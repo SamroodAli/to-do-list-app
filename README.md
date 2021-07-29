@@ -1,5 +1,6 @@
 # TO DO List project
   A todo list app built using Web APIs and webpack to bundle modules.
+  
 ## Built With
 - CSS Bootstrap
 - Javascript
@@ -58,7 +59,7 @@ npm run serve
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](issues/).
+Feel free to check the [issues page](https://github.com/SamroodAli/to-do-list-app/issues/).
 
 ## Show your support
 
