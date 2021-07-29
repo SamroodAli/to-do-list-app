@@ -30,7 +30,7 @@ const todoCard = (todo, idx) => {
       p(todo.description),
       p(todo.date),
       p(todo.priority),
-      p(getCategories()[todo.category].name),
+      p(todo.category),
       editButton,
       deleteButton,
     ],
