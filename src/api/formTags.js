@@ -20,8 +20,9 @@ export const customInput = (type) => (placeholder, className, attributes, styles
 );
 
 export const labelFor = (innerHTML, htmlFor, className, styles, attributes) => {
-  return label(innerHTML, className, { for: htmlFor, ...attributes }, styles);
-}
+  const attributesForElement = { for: htmlFor, ...attributes };
+  return label(innerHTML, className, attributesForElement, styles);
+};
 
 export const textInput = customInput('text');
 export const checkBoxInput = customInput('checkbox');
