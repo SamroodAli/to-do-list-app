@@ -14,9 +14,16 @@ test("test new Todo Form", () => {
   expect(actual.outerHTML).toEqual(expected);
 });
 
-test("Options creator in views", () => {
+test("Options creator in views/todoForm", () => {
   const actual = optionsCreator(categories, categories[0]);
   expect(typeof actual).toBe("object");
   expect(Array.isArray(actual)).toBe(true);
   expect(actual[0].outerHTML).toEqual('<option value="undefined"></option>');
+});
+
+test("selectCreator in views/todoForm", () => {
+  const actual = selectCreator(categories, categories[0]);
+  const expected =
+    '<select id="categoriesSelect"><option value="undefined"></option></select>';
+  expect(actual.outerHTML).toEqual(expected);
 });
