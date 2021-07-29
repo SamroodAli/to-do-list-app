@@ -1,4 +1,4 @@
-import "@testing-library/jest-dom";
+import '@testing-library/jest-dom';
 
 const html = `
 <!DOCTYPE html>
@@ -63,7 +63,7 @@ const html = `
 
 document.body.innerHTML = html;
 
-test("testing index.html page in source", () => {
+test('testing index.html page in source', () => {
   expect(document.body).toContainHTML(html);
 });
 
