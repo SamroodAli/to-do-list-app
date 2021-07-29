@@ -1,8 +1,8 @@
-import { nanoid } from 'nanoid';
-import { div, p, button } from '../api/tags.js';
-import form from '../pages/form.js';
-import { getCategories, setCategories } from '../api/storage.js';
-import { deleteId, changePage } from '../api/render.js';
+import { nanoid } from "nanoid";
+import { div, p, button } from "../api/tags.js";
+import form from "../pages/form.js";
+import { getCategories, setCategories } from "../api/storage.js";
+import { deleteId, changePage } from "../api/render.js";
 
 const onClick = (todo, idx) => {
   changePage(form(todo, idx));
@@ -18,11 +18,11 @@ const onDelete = (id, categoryId) => {
 const todoCard = (todo, idx) => {
   const id = nanoid();
 
-  const editButton = button('edit Todo');
-  editButton.addEventListener('click', () => onClick(todo, idx));
+  const editButton = button("edit Todo");
+  editButton.addEventListener("click", () => onClick(todo, idx));
 
-  const deleteButton = button('delete Todo');
-  deleteButton.addEventListener('click', () => onDelete(id, todo.category));
+  const deleteButton = button("delete Todo");
+  deleteButton.addEventListener("click", () => onDelete(id, todo.category));
 
   const ele = div(
     [
@@ -34,8 +34,8 @@ const todoCard = (todo, idx) => {
       editButton,
       deleteButton,
     ],
-    'card mx-auto w-100 m-1',
-    { id },
+    "card mx-auto w-100 m-1",
+    { id }
   );
   return ele;
 };

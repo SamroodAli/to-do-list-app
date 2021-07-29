@@ -2,17 +2,17 @@ import { changePage, eleId } from "./api/render.js";
 import form from "./pages/form.js";
 import CategoryPage from "./pages/categories.js";
 import TodosPage from "./pages/todos.js";
-import { getCategories, categoryTodos } from "./api/storage.js";
+import { categoryTodos, categoryValues } from "./api/storage.js";
 import "./style.scss";
 
 eleId("categories").addEventListener("click", () => {
-  const categories = categoryTodos();
+  const categories = categoryValues();
   changePage(CategoryPage(categories));
 });
 eleId("todos").addEventListener("click", () => {
-  const categories = getCategories();
-  const todos = Object.keys(categories).map((id) => categories[id].todos);
-  changePage(TodosPage(todos.flat()));
+  const todos = categoryTodos();
+  console.log(todos);
+  changePage(TodosPage(todos));
 });
 eleId("newTodo").addEventListener("click", () => changePage(form()));
 
