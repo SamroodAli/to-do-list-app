@@ -2,11 +2,10 @@ import { changePage, eleId } from "./api/render.js";
 import form from "./pages/form.js";
 import CategoryPage from "./pages/categories.js";
 import TodosPage from "./pages/todos.js";
-import { getCategories, categoryTodos } from "./api/storage.js";
+import { getCategories } from "./api/storage.js";
 import "./style.scss";
 
 eleId("categories").addEventListener("click", () => {
-  const categories = categoryTodos();
   changePage(CategoryPage(categories));
 });
 eleId("todos").addEventListener("click", () => {
