@@ -8,9 +8,8 @@ test('todos page test markup', () => {
     priority: 10,
     category: 'categoryid',
   };
-  const categories = { categoryid: { name: 'project1' } };
 
-  const actual = TodosPage([todo], categories);
+  const actual = TodosPage([todo]);
   expect(actual.outerHTML).toEqual(
     '<section><div class="card mx-auto w-100 m-1" id="todo-0"><p></p><p></p><p></p><p></p><p></p><button></button><button></button></div></section>',
   );
