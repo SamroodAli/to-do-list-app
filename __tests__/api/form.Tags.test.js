@@ -13,7 +13,7 @@ import {
   dateInput,
   numberInput,
   submitButton,
-} from "../src/api/formTags.js";
+} from "../../src/api/formTags.js";
 
 test("testing form wrapper for dom element", () => {
   const actual = form("Hello world", "className");

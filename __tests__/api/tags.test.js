@@ -19,7 +19,7 @@ import {
   a,
   button,
   img,
-} from "../src/api/tags.js";
+} from "../../src/api/tags.js";
 
 test("testing div wrapper for dom element", () => {
   const actual = div("Hello world", "className");

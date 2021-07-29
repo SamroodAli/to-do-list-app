@@ -1,12 +1,12 @@
 import "@testing-library/jest-dom";
-import document from "./document.js";
+import document from "../document.js";
 import {
   render,
   renderOn,
   eleId,
   deleteId,
   changePage,
-} from "../src/api/render.js";
+} from "../../src/api/render.js";
 
 test("test render function to append child with parent", () => {
   const div = document.createElement("div");
